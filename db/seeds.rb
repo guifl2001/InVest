@@ -1,22 +1,22 @@
-# puts "Creating Faculdades"
+puts "Creating Faculdades"
 
-# Faculdade.create(name: "USP")
-# Faculdade.create(name: "UNICAMP")
-# Faculdade.create(name: "INSPER")
-# Faculdade.create(name: "UNIFESP")
+Faculdade.create(name: "USP")
+Faculdade.create(name: "UNICAMP")
+Faculdade.create(name: "INSPER")
+Faculdade.create(name: "UNIFESP")
 
-# puts "Faculdades created"
+puts "Faculdades created"
 
 
-# puts "Creating Cursos"
+puts "Creating Cursos"
 
-# p1 = Curso.create(name: "Administração")
-# p2 =Curso.create(name: "Engenharia de Computação")
-# p3 = Curso.create(name: "Arquitetura")
-# p4 = Curso.create(name: "Direito")
-# p5 = Curso.create(name: "Nutrição")
+p1 = Curso.create(name: "Administração")
+p2 =Curso.create(name: "Engenharia de Computação")
+p3 = Curso.create(name: "Arquitetura")
+p4 = Curso.create(name: "Direito")
+p5 = Curso.create(name: "Nutrição")
 
-# puts "Cursos Created"
+puts "Cursos Created"
 
 puts "Creating Opcaos"
 
