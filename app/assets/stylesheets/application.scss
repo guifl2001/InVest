@@ -11,8 +11,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/form-login";
 @import "components/banner";
 @import "components/home";
+
 
 body {
   background-color: white;
