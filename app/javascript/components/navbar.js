@@ -2,12 +2,10 @@ const initUpdateNavbarOnScroll = () => {
   const navbar = document.querySelector('.navbar');
   if (navbar) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY >= window.innerHeight) {
-        navbar.classList.remove('navbar-lewagon-transp');
-        navbar.classList.add('navbar-lewagon');
+      if (window.scrollY >= 300) {
+        navbar.classList.remove('transparent');
       } else {
-        navbar.classList.remove('navbar-lewagon-transp');
-        navbar.classList.add('navbar-lewagon');
+        navbar.classList.add('transparent');
       }
     });
   }
