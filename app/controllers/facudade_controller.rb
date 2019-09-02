@@ -1,0 +1,2 @@
+class FacudadeController < ApplicationController
+end
