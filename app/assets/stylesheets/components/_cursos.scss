@@ -1,0 +1,90 @@
+.card-cursos {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 30px 15px;
+
+}
+
+.card-cursos > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-cursos h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-cursos p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-cursos .card-cursos-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  background-color: $lighter-orange;
+  color: white;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.cont-cursos {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.filter {
+  background-color: $lighter-orange;
+  padding: 5px;
+  margin: 5% 2% 2% 2% ;
+  width: 95%;
+  text-align: center;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
