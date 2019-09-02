@@ -7,6 +7,8 @@
   transition: 0.5s ease;
   .nav-item {
     padding-left: 1.5rem;
+    display: flex;
+    align-items: center;
   }
   .nav-link {
     color: $white-color;
