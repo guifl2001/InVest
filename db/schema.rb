@@ -10,10 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_161213) do
+ActiveRecord::Schema.define(version: 2019_09_02_170628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cursos", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "faculdades", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "opcaos", force: :cascade do |t|
+    t.bigint "faculdade_id"
+    t.bigint "curso_id"
+    t.string "data_inscricao"
+    t.string "data_prova"
+    t.integer "ranking"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["curso_id"], name: "index_opcaos_on_curso_id"
+    t.index ["faculdade_id"], name: "index_opcaos_on_faculdade_id"
+  end
+
+  create_table "user_opcaos", force: :cascade do |t|
+    t.bigint "opcao_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["opcao_id"], name: "index_user_opcaos_on_opcao_id"
+    t.index ["user_id"], name: "index_user_opcaos_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +57,19 @@ ActiveRecord::Schema.define(version: 2019_09_02_161213) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "photo"
+    t.string "address"
+    t.string "phone_number"
+    t.string "age"
+    t.string "college"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "opcaos", "cursos"
+  add_foreign_key "opcaos", "faculdades"
+  add_foreign_key "user_opcaos", "opcaos"
+  add_foreign_key "user_opcaos", "users"
 end
