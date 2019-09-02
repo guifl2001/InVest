@@ -6,7 +6,7 @@ const initUpdateNavbarOnScroll = () => {
         navbar.classList.remove('transparent');
       } else {
         navbar.classList.add('transparent');
-      }z
+      }
     });
   }
 }
