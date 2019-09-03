@@ -9,7 +9,7 @@
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .grids {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 
