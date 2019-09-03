@@ -1,9 +1,12 @@
-<div class="container my-5">
+<div class="container my-5 py-5">
   <div class="grids">
     <% @faculdades.each do |faculdade| %>
-      <div class="faculdade">
-        <p class="title"><%=  faculdade.name %></p>
-      </div>
+       <%= link_to faculdade_path(faculdade), class: "faculdade" do %>
+        <div class="faculdade-text">
+          <p class="title"><%=  faculdade.name %></p>
+          <p class="description">Veja mais</p>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
