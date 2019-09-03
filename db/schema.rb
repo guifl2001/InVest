@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_03_165959) do
+
+ActiveRecord::Schema.define(version: 2019_09_03_172736) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +58,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_165959) do
     t.integer "CC"
     t.integer "vagas"
     t.integer "ENADE"
+    t.string "OCDE_curso"
     t.index ["curso_id"], name: "index_opcaos_on_curso_id"
     t.index ["faculdade_id"], name: "index_opcaos_on_faculdade_id"
   end
