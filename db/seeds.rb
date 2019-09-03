@@ -53,6 +53,7 @@ CSV.foreach(path) do |row|
     p opcao.CC = row[7]
     p opcao.vagas = row[9]
     p opcao.ENADE = row[8]
+    p opcao.name =
     p opcao.save
   end
 end

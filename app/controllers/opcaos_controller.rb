@@ -4,6 +4,7 @@ class OpcaosController < ApplicationController
   end
 
   def index
+    @cursos = Curso.all
     @opcaos = Opcao.all
   end
 end

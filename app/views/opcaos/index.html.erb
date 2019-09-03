@@ -1,4 +1,35 @@
-<% @opcaos.each do |o| %>
-<%= o.curso.name %>
-<%= o.faculdade.name %>
-<% end %>
+<div class="cont-cursos">
+  <div class="filter">
+
+    <h3>Filtrar</h3>
+
+
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">Escolhe um curso</button>
+      <div id="myDropdown" class="dropdown-content">
+        <input type="text" placeholder="Search.." id="query" onkeyup="filterFunction()">
+        <% @cursos.each do |curso| %>
+          <a href=""> <%= curso.name %></a>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grids">
+
+  <% @opcaos.each do |o| %>
+    <div class="card-cursos">
+    <img src="https://picsum.photos/id/237/500/200" />
+      <div class="card-cursos-infos">
+        <div>
+          <h2><%= link_to o.curso.name, opcao_path(o), class: "decoration curso-decoration" %></h2>
+          <h3><%= o.faculdade.sigla %></h3>
+          <p></p>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nobis quaerat quasi unde facilis dolorem odit, odio, vel a aliquid eligendi qui voluptatibus totam, omnis beatae natus inventore dolores ullam.</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
