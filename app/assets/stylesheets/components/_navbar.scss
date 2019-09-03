@@ -1,10 +1,15 @@
 .navbar-lewagon {
-  padding: 8px 35px;
+  padding: 8px 4rem;
   justify-content: space-between;
   background: $primary-color;
   text-transform: uppercase;
   font-size: 15px;
   transition: 0.5s ease;
+  .nav-item {
+    padding-left: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
   .nav-link {
     color: $white-color;
     transition: 0.5s ease;
@@ -32,5 +37,27 @@
 
 .transparent {
   transition: 0.5s ease;
-  background-color: transparent
+  background-color: transparent;
+  .nav-link {
+    color: $white-color;
+    transition: 0.5s ease;
+    border-radius: 20px;
+    padding: 10px 20px !important;
+    &:hover {
+      background-color: $opacity-gray-3;
+    }
+  }
 }
+
+.dropdown-menu {
+  border: 0;
+  box-shadow: 0 10px 50px 0 rgba(0,0,0,.2);
+  border-radius: .125rem;
+  transition: all .15s linear;
+  font-size: 13px;
+  background-color: white;
+  .dropdown-item {
+    color: $primary-color
+  }
+}
+

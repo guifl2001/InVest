@@ -1,0 +1,89 @@
+.form-login-btn {
+  background-color: #f96332;
+  border-radius: 14vh;
+  height: 8vh;
+  padding: 1vh 8vh;
+  width: 28vh;
+  opacity: 1;
+  margin: 0 auto;
+  .btn {
+    color: white;
+  }
+}
+
+.form-login-btn:hover {
+opacity: 0.70;
+}
+
+
+.form-login-links {
+  a {
+    color: black;
+    opacity: 0.85;
+  }
+}
+
+.form-login-links {
+  margin-top: 2vh;
+  a:hover {
+    opacity: 1;
+  }
+}
+
+.form-login-email {
+  .form-control {
+    border-radius: 22vh;
+    opacity:0.50;
+  }
+}
+
+.form-login-email {
+  .form-control:hover {
+    border: 1px solid;
+    border-color: #f96332;
+  }
+}
+
+.form-login-password {
+  .form-control {
+    border-radius: 22vh;
+    opacity:0.50;
+  }
+}
+
+.form-login-password {
+  .form-control:hover {
+    border: 1px solid;
+    border-color: #f96332;
+  }
+}
+
+
+.form-login-check {
+
+}
+
+.form-login-inputs {
+  margin: 0 auto;
+  width: 35%;
+  margin-top: 7vh;
+}
+
+.flex-align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-login {
+  // background-image: url("https://unsplash.com/photos/pUAM5hPaCRI");
+  background-image: url("https://images.unsplash.com/photo-1488998427799-e3362cec87c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.center {
+  text-align: center;
+}
