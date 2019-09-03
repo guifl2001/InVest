@@ -31,6 +31,7 @@
 require 'csv'
 
 path = "/home/guillaume/code/guifl2001/InVest/db/universidade_cursos_updated.csv"
+
 # Seed para cadastrar todas as Faculdade sem repetidas
 # CSV.foreach(path) do |row|
 #     faculdade_existante = Faculdade.where(name: row[1])
@@ -58,8 +59,24 @@ path = "/home/guillaume/code/guifl2001/InVest/db/universidade_cursos_updated.csv
 # end
 
 CSV.foreach(path) do |row|
+  opcao = Opcao.new
+  faculdade = Faculdade.where(name: row[1])
+  p faculdade
+  curso = Curso.where(name: row[4])
+  p curso
+  opcao_existante = Opcao.where(faculdade: faculdade).where(curso: curso)
 
-  if
+  if opcao_existante.empty? == false
+    p "sdf"
   else
+    opcao.faculdade = faculdade[0]
+    opcao.curso = curso[0]
+    opcao.grau = row[5]
+    opcao.modalidade = row[6]
+    opcao.ano_criacao = row[10]
+    opcao.CC = row[7]
+    opcao.vagas = row[9]
+    opcao.ENADE = row[8]
+    p opcao.save
   end
 end
