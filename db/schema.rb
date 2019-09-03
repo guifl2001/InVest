@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_170628) do
+ActiveRecord::Schema.define(version: 2019_09_03_133927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_09_02_170628) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "OCDE_geral"
   end
 
   create_table "faculdades", force: :cascade do |t|
@@ -26,6 +27,17 @@ ActiveRecord::Schema.define(version: 2019_09_02_170628) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "sigla"
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer "following_id", null: false
+    t.integer "follower_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["follower_id"], name: "index_follows_on_follower_id"
+    t.index ["following_id", "follower_id"], name: "index_follows_on_following_id_and_follower_id", unique: true
+    t.index ["following_id"], name: "index_follows_on_following_id"
   end
 
   create_table "opcaos", force: :cascade do |t|
@@ -36,6 +48,12 @@ ActiveRecord::Schema.define(version: 2019_09_02_170628) do
     t.integer "ranking"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "grau"
+    t.string "modalidade"
+    t.string "ano_criacao"
+    t.integer "CC"
+    t.integer "vagas"
+    t.integer "ENADE"
     t.index ["curso_id"], name: "index_opcaos_on_curso_id"
     t.index ["faculdade_id"], name: "index_opcaos_on_faculdade_id"
   end

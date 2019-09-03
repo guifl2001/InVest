@@ -1,9 +1,9 @@
-<div class="container-login">
+<div class="container-login form-align-center">
   <div class="row justify-content-center">
     <div class="col-lg-12 col-md-12 col-sm-12 flex-align center">
-        <div class="form-login-inputs">
+        <div class="form-center">
           <form>
-            <div class="form-login-email">
+            <div class="forms-inputs">
               <h2>Log in</h2>
               <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               <%= f.input :email,
@@ -12,7 +12,7 @@
                       input_html: { autocomplete: "Email address" } %>
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
-            <div class="form-login-password">
+            <div class="forms-inputs">
               <%= f.input :password,
                       required: false,
                       input_html: { autocomplete: "current-password" } %>
@@ -20,7 +20,7 @@
             <div class="form-login-check">
               <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
             </div>
-            <div class="form-login-btn">
+            <div class="form-submit-btn">
               <%= f.button :submit, "Log in"%>
             </div>
           </form>

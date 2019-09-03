@@ -1,3 +1,8 @@
-<% @cursos.each do |c| %>
-<%= c.name %>
-<% end %>
+
+<div class="grids">
+  <% @cursos.each do |c| %>
+    <div class="curso">
+      <%= c.name %>
+    </div>
+  <% end %>
+</div>
