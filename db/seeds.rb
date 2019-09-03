@@ -2,6 +2,13 @@ puts "Deleting all"
 Opcao.delete_all
 Faculdade.delete_all
 Curso.delete_all
+User.delete_all
+
+User.create(email: "bru@estudante.com", password: "estudante")
+User.create(email: "guif@estudante.com", password: "estudante")
+User.create(email: "guiz@estudante.com", password: "estudante")
+User.create(email: "edu@estudante.com", password: "estudante")
+
 
 puts "Creating all"
 require 'csv'
