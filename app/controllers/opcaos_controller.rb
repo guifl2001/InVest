@@ -5,6 +5,13 @@ class OpcaosController < ApplicationController
 
   def index
     @cursos = Curso.all
-    @opcaos = Opcao.all
+    @opcaos = Opcao.all.page(params[:page]).per(16)
+    if params[:query].present?
+      # @opcaos = Opcao.where(vagas: params[:query])
+
+      @opcaos = Opcao.where("grau ILIKE ?", "%#{params[:query]}%")
+    else
+      @opcaos = Opcao.all
+    end
   end
 end

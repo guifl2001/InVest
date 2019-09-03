@@ -1,35 +1,55 @@
-<div class="cont-cursos">
-  <div class="filter">
+<div class="filter">
 
-    <h3>Filtrar</h3>
+  <h3>Filtrar</h3>
 
 
-    <div class="dropdown">
-      <button onclick="myFunction()" class="dropbtn">Escolhe um curso</button>
-      <div id="myDropdown" class="dropdown-content">
-        <input type="text" placeholder="Search.." id="query" onkeyup="filterFunction()">
-        <% @cursos.each do |curso| %>
-          <a href=""> <%= curso.name %></a>
+  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Escolhe um curso</button>
+    <div id="myDropdown" class="dropdown-content">
+      <input type="text" placeholder="Search.." id="query" onkeyup="filterFunction()">
+        <% ocde_hash = [] %>
+      <% @cursos.each do |curso| %>
+
+        <% if ocde_hash.include?(curso.OCDE_geral) == false %>
+          <% ocde_hash << curso.OCDE_geral %>
+          <% else %>
         <% end %>
-      </div>
-    </div>
 
+        <a href=""> <%=ocde_hash.first %></a>
+
+        <% end %>
+    </div>
   </div>
 
-  <div class="grids">
 
-  <% @opcaos.each do |o| %>
-    <div class="card-cursos">
-    <img src="https://picsum.photos/id/237/500/200" />
-      <div class="card-cursos-infos">
-        <div>
-          <h2><%= link_to o.curso.name, opcao_path(o), class: "decoration curso-decoration" %></h2>
-          <h3><%= o.faculdade.sigla %></h3>
-          <p></p>
+</div>
 
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nobis quaerat quasi unde facilis dolorem odit, odio, vel a aliquid eligendi qui voluptatibus totam, omnis beatae natus inventore dolores ullam.</p>
-        </div>
+
+
+<%= form_tag opcaos_path, method: :get do %>
+<%= text_field_tag :query,
+  params[:query],
+  class: "form-control",
+  id: "query",
+  placeholder: "Busca uma matéria"%>
+<%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+
+<div class="grids">
+
+<% @opcaos.each do |o| %>
+  <div class="card-cursos">
+  <img src="https://picsum.photos/id/237/500/200" />
+    <div class="card-cursos-infos">
+      <div>
+        <h2><%= link_to o.curso.name, opcao_path(o), class: "decoration curso-decoration" %></h2>
+        <h3><%= o.faculdade.sigla %></h3>
+        <p></p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nobis quaerat quasi unde facilis dolorem odit, odio, vel a aliquid eligendi qui voluptatibus totam, omnis beatae natus inventore dolores ullam.</p>
       </div>
     </div>
-  <% end %>
   </div>
+<% end %>
+</div>
