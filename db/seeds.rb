@@ -36,7 +36,7 @@ CSV.foreach(path) do |row|
     "qsd"
   else
     curso.name = row[2]
-    curso.OCDE_geral = row[9]
+    curso.ocde_geral = row[9]
     p curso.save
   end
 end
@@ -57,10 +57,10 @@ CSV.foreach(path) do |row|
     opcao.grau = row[3]
     opcao.modalidade = row[4]
     opcao.ano_criacao = row[8]
-    opcao.CC = row[5]
+    opcao.cc = row[5]
     opcao.vagas = row[7]
-    opcao.ENADE = row[6]
-    opcao.OCDE_curso = row[10]
+    opcao.enade = row[6]
+    opcao.ocde_curso = row[10]
     p opcao.save
   end
 end

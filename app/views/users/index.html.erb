@@ -1,12 +1,26 @@
 <div class="container my-5 py-5">
   <div class="grids">
     <% @users.each do |user| %>
-       <%= link_to users_path(user), class: "user-card" do %>
-        <div class="faculdade-text">
-          <p class="title"><%=  user.first_name %></p>
-          <p class="description">Veja mais</p>
+       <div class="user-card">
+        <div class="bg-img">
+          <%= image_tag "https://images.unsplash.com/photo-1529008338-310c24f458ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80", class: "avatar user-img", style: 'height:100px ;width:100px;object-fit:cover' %>
         </div>
-      <% end %>
+        <div class="user-text">
+          <%= link_to "#{user.first_name} #{user.last_name}", users_path(user), class:"title" %>
+          <p class="email"><%=  user.email %></p>
+          <div class="button-container">
+            <a href="#button" class="btn btn-round" rel="tooltip" title="Follow me on Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#button" class="btn btn-round" rel="tooltip" title="Follow me on Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#button" class="btn btn-round" rel="tooltip" title="Follow me on Instagram">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+       </div>
     <% end %>
   </div>
 </div>
