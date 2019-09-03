@@ -1,7 +1,12 @@
-<h1></h1>
-<h1></h1>
-<h1>Users:</h1>
-<ul>
-  <%= render @users %>
-</ul>
-
+<div class="container my-5 py-5">
+  <div class="grids">
+    <% @users.each do |user| %>
+       <%= link_to users_path(user), class: "user-card" do %>
+        <div class="faculdade-text">
+          <p class="title"><%=  user.first_name %></p>
+          <p class="description">Veja mais</p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
