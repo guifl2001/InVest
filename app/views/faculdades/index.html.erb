@@ -4,7 +4,7 @@
     <% @faculdades.each do |faculdade| %>
        <%= link_to faculdade_path(faculdade), class: "faculdade" do %>
         <div class="faculdade-text">
-          <p class="title"><%=  faculdade.name %></p>
+          <p class="title"><%=  faculdade.sigla %></p>
           <p class="description">Veja mais</p>
         </div>
       <% end %>
