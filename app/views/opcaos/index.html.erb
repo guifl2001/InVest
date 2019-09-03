@@ -10,8 +10,8 @@
         <% ocde_hash = [] %>
       <% @cursos.each do |curso| %>
 
-        <% if ocde_hash.include?(curso.OCDE_geral) == false %>
-          <% ocde_hash << curso.OCDE_geral %>
+        <% if ocde_hash.include?(curso.ocde_geral) == false %>
+          <% ocde_hash << curso.ocde_geral %>
           <% else %>
         <% end %>
 
