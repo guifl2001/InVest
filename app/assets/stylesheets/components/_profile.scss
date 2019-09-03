@@ -41,7 +41,7 @@
   }
 
   h5.description{
-      max-width: 700px;
+      max-width: 750px;
       margin: 20px auto 75px;
   }
 
@@ -78,16 +78,16 @@
       width: 3.5rem;
       height: 3.5rem;
       transition: 0.5s ease;
-      background-color: $opacity-gray-3;
+      background-color: white;
       &:hover {
-        background-color: $opacity-gray-8;
+        background-color: $primary-color;;
         i {
-          color: $primary-color;
+          color: white;
         }
       }
       i {
         font-size: 1.5rem;
-        color: white;
+        color: $primary-color;
       }
     }
   }

@@ -48,3 +48,16 @@
     }
   }
 }
+
+.dropdown-menu {
+  border: 0;
+  box-shadow: 0 10px 50px 0 rgba(0,0,0,.2);
+  border-radius: .125rem;
+  transition: all .15s linear;
+  font-size: 13px;
+  background-color: white;
+  .dropdown-item {
+    color: $primary-color
+  }
+}
+
