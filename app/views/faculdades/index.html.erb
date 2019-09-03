@@ -1,9 +1,13 @@
-<div class="container my-5"><div class="grids">
-  <% @faculdades.each do |faculdade| %>
-    <div class="faculdade">
-      <img src="https://images.unsplash.com/photo-1511629091441-ee46146481b6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
-      <p><%=  faculdade.name %></p>
-    </div>
-  <% end %>
-</div>
+
+<div class="container my-5 py-5">
+  <div class="grids">
+    <% @faculdades.each do |faculdade| %>
+       <%= link_to faculdade_path(faculdade), class: "faculdade" do %>
+        <div class="faculdade-text">
+          <p class="title"><%=  faculdade.name %></p>
+          <p class="description">Veja mais</p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>

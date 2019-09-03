@@ -4,6 +4,13 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
+  resources :users, only: [:index] do
+    member do
+      post :follow
+      post :unfollow
+    end
+  end
+
   #faculdade
   resources :faculdades, only: %i[show index]
 

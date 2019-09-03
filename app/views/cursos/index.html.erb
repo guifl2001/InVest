@@ -1,8 +1,32 @@
+<div class="cont-cursos">
+  <div class="filter">
 
-<div class="grids">
+    <h3>Filtrar</h3>
+
+
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">Escolhe um curso</button>
+      <div id="myDropdown" class="dropdown-content">
+        <input type="text" placeholder="Search.." id="query" onkeyup="filterFunction()">
+        <% @cursos.each do |curso| %>
+          <a href=""> <%= curso.name %></a>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cards">
+
   <% @cursos.each do |c| %>
-    <div class="curso">
-      <%= c.name %>
+    <div class="card-cursos">
+    <img src="https://picsum.photos/id/237/500/200" />
+      <div class="card-cursos-infos">
+        <div>
+          <h2 style="color: white"> <%= c.name %> </h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nobis quaerat quasi unde facilis dolorem odit, odio, vel a aliquid eligendi qui voluptatibus totam, omnis beatae natus inventore dolores ullam.</p>
+        </div>
+      </div>
     </div>
   <% end %>
-</div>
+  </div>
