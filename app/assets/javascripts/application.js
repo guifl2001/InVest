@@ -28,7 +28,7 @@ function filterFunction() {
 $('.slider').slick({
   centerMode: true,
 
-  slidesToShow: 5,
+  slidesToShow: 5 ,
   autoplay:true,
   responsive: [
     {
