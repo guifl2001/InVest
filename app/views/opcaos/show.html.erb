@@ -1,2 +1,30 @@
-<%= @opcao.curso.name %>
-<%= @opcao.faculdade.name %>
+<div class="container white-bg shadow">
+    <!-- Portfolio Item Row -->
+  <div class="row rola">
+      <!-- Portfolio Item Heading -->
+    <div class="foto col-md-8">
+      <img class="d-block img-fluid" src="<%= image_path('faculdade.jpg') %>">
+    </div>
+
+    <div class="col-md-4 text-description">
+      <div class=" d-flex flex-column align-items-center margin-b">
+        <p><%= @opcao.faculdade.name %></p>
+        <h4><%= @opcao.curso.name %></h4>
+        <p><%= @opcao.data_inscricao %></p>
+        <p><%= @opcao.data_prova %></p>
+        <p><%= @opcao.grau %></p>
+        <p><%= @opcao.modalidade %></p>
+        <p><%= @opcao.ano_criacao %></p>
+        <p><%= @opcao.ranking %></p>
+        <p><%= @opcao.cc %></p>
+        <p><%= @opcao.enade %></p>
+        <p><%= @opcao.ocde_curso %></p>
+        <p><%= @opcao.vagas %></p>
+
+
+      </div>
+    </div>
+  </div>
+  </div>
+<!-- /.container -->
+</div>
