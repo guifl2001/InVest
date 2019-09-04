@@ -2,6 +2,7 @@
   "name": "InVest",
   "private": true,
   "dependencies": {
+    "@fullcalendar/daygrid": "^4.3.0",
     "@rails/webpacker": "^4.0.7",
     "aos": "^2.3.4",
     "bootstrap": "^4.3.1",
