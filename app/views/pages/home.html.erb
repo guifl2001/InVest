@@ -5,19 +5,19 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active banner">
+      <div class="carousel-item active banner" style="background-image: linear-gradient(0deg,rgba(44,44,44,.2),rgba(224,23,3,.6)), url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');">
         <div class="carousel-caption d-none d-md-block">
           <h2><span id="banner-typed-text"></span></h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex cumque similique atque earum totam illo reiciendis dolore veniam, quibusdam consectetur suscipit amet magnam aliquam cum vero sint mollitia! Sint, ex.</p>
         </div>
       </div>
-      <div class="carousel-item banner">
+      <div class="carousel-item banner" style="background-image: linear-gradient(0deg,rgba(44,44,44,.2),rgba(224,23,3,.6)), url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');">
         <div class="carousel-caption d-none d-md-block">
           <h2>Title</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex cumque similique atque earum totam illo reiciendis dolore veniam, quibusdam consectetur suscipit amet magnam aliquam cum vero sint mollitia! Sint, ex.</p>
         </div>
       </div>
-      <div class="carousel-item banner">
+      <div class="carousel-item banner" style="background-image: linear-gradient(0deg,rgba(44,44,44,.2),rgba(224,23,3,.6)), url('https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png');">
         <div class="carousel-caption d-none d-md-block">
           <h2>Title</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex cumque similique atque earum totam illo reiciendis dolore veniam, quibusdam consectetur suscipit amet magnam aliquam cum vero sint mollitia! Sint, ex.</p>
@@ -32,15 +32,18 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus corrupti, vero fugit hic officiis et optio sint nobis nesciunt porro numquam totam doloremque voluptas officia, maxime temporibus, non sunt.</p>
   </div>
   <hr>
-  <div class="resume" data-aos="fade-right">
-    <div class="img-container">
-      <%= image_tag 'graduation.png' %>
+  <%= link_to cursos_path, class: "none-dec" do %>
+    <div class="resume" data-aos="fade-right">
+      <div class="img-container">
+        <%= image_tag 'graduation.png' %>
+      </div>
+      <div class="text">
+        <h2>Escolha seu curso</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, voluptates.</p>
+      </div>
     </div>
-    <div class="text">
-      <h2>Escolha seu curso</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, voluptates.</p>
-    </div>
-  </div>
+  <% end %>
+  <%= link_to faculdades_path, class: "none-dec" do %>
   <div class="resume reverse" data-aos="fade-left">
     <div class="img-container">
       <%= image_tag 'online-university.png' %>
@@ -50,6 +53,7 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, voluptates.</p>
     </div>
   </div>
+  <% end %>
   <div class="resume" data-aos="fade-right">
     <div class="img-container">
       <%= image_tag 'timetable.png' %>

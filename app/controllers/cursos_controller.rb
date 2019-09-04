@@ -10,12 +10,4 @@ class CursosController < ApplicationController
   def show
     @curso = Curso.find(params[:id])
   end
-
-  def self.my_import(file)
-    cursos = []
-    CSV.foreach(file.path, headers: true) do |row|
-      cursos << Curso.new(row.to_h)
-    end
-    Curso.import cursos, recursive: true
-  end
 end

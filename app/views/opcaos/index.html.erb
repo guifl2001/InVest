@@ -1,4 +1,38 @@
+<div class="filter margin-top">
+  <div class="test">
+  <%= form_tag opcaos_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    id: "query",
+    placeholder: "Busca uma matéria"%>
+  <%= button_tag type: 'submit', class: "button" do %>
+    <i class=" fa fa-search" aria-hidden="true"><span class="my-0"> Buscar </span></i>
+  <% end %>
+  <% end %>
+  <%= link_to "Ver todas", opcaos_path, class: "curso-decoration bold" %>
+  </div>
+</div>
+
+<div class="grids">
+
 <% @opcaos.each do |o| %>
-<%= o.curso.name %>
-<%= o.faculdade.name %>
+  <div class="card-opcao">
+  <img src="https://picsum.photos/id/237/500/200" />
+    <div class="card-opcao-infos">
+      <div>
+        <h2><%= link_to o.curso.name, opcao_path(o), class: "decoration curso-decoration" %></h2>
+        <% if o.faculdade.sigla == "-" %>
+          <h5><%= o.faculdade.name %></h5>
+        <% else %>
+          <h5><%= o.faculdade.sigla %></h5>
+        <% end %>
+      </div>
+    </div>
+  </div>
 <% end %>
+</div>
+
+<div class='pagination-section'>
+  <%= paginate @opcaos %>
+</div>
