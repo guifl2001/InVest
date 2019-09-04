@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+gem "typedjs-rails", "~> 2.0.9"
 gem "jquery-slick-rails"
 gem "select2-rails"
 gem 'carrierwave', '~> 1.2'

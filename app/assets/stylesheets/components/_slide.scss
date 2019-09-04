@@ -1,8 +1,8 @@
 .slider {
   background-color: $light-gray;
+  margin: 0;
   .slide {
     text-align: center;
-    padding: 0 15px;
     .slick-slide {
       display: flex;
       justify-content: center;
