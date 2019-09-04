@@ -13,4 +13,3 @@ import { table } from '../components/table';
 table();
 
 AOS.init();
-loadDynamicBannerText();
