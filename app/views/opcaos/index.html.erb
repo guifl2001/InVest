@@ -1,4 +1,4 @@
-<div class="filter my-5">
+<div class="filter margin-top">
   <div class="test">
   <%= form_tag opcaos_path, method: :get do %>
   <%= text_field_tag :query,
@@ -6,8 +6,11 @@
     class: "form-control",
     id: "query",
     placeholder: "Busca uma matéria"%>
-  <%= submit_tag "Search", class: "button fa fa-search" %>
+  <%= button_tag type: 'submit', class: "button" do %>
+    <i class=" fa fa-search" aria-hidden="true"><span class="my-0"> Buscar </span></i>
   <% end %>
+  <% end %>
+  <%= link_to "Ver todas", opcaos_path, class: "curso-decoration bold" %>
   </div>
 </div>
 

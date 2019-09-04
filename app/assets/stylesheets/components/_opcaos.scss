@@ -49,9 +49,9 @@
   background-color: $lighter-orange;
   padding: 5px;
   border-radius: 2%;
-  width: 20%;
   text-align: center;
   margin: 0 auto;
+  font-weight: bolder;
 }
 
 // Smallest device
@@ -95,15 +95,15 @@
   font-size: 17px;
   border: 1px solid grey;
   float: left;
-  width: 80%;
+  width: 20%;
   background: #f1f1f1;
 }
 
 /* Style the submit button */
 .button {
   float: left;
-  width: 20%;
-  padding: 10px;
+  width: 8%;
+  padding: 6px;
   background: #2196F3;
   color: white;
   font-size: 17px;
@@ -122,3 +122,8 @@
   clear: both;
   display: table;
 }
+
+.margin-top {
+  margin-top: 5%;
+}
+
