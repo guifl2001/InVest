@@ -5,9 +5,12 @@ import AOS from 'aos';
 import { initMapbox } from '../plugins/init_mapbox';
 import { loadDynamicBannerText } from '../components/banner';
 
-
 initUpdateNavbarOnScroll();
 loadDynamicBannerText();
 initMapbox();
 
+import { table } from '../components/table';
+table();
+
 AOS.init();
+loadDynamicBannerText();

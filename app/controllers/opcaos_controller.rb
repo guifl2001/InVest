@@ -4,6 +4,14 @@ class OpcaosController < ApplicationController
   end
 
   def index
-    @opcaos = Opcao.all
+    @cursos = Curso.all
+    @opcaos = Opcao.all.page(params[:page]).per(16)
+    if params[:query].present?
+      # @opcaos = Opcao.where(vagas: params[:query])
+
+      @opcaos = Opcao.where("ocde_curso ILIKE ?", "%#{params[:query]}%").page(params[:page]).per(16)
+    else
+      @opcaos = Opcao.all.page(params[:page]).per(16)
+    end
   end
 end
