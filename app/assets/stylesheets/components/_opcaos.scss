@@ -1,0 +1,129 @@
+.card-opcao {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 30px 15px;
+  height: 80%;
+}
+
+.card-opcao > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-opcao h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-opcao p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-opcao .card-opcao-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  color: white;
+  background-color: $lighter-orange;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.cont-opcao {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.filter {
+  background-color: $lighter-orange;
+  padding: 5px;
+  border-radius: 2%;
+  text-align: center;
+  margin: 0 auto;
+  font-weight: bolder;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Style the search field */
+#query {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 20%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+.button {
+  float: left;
+  width: 8%;
+  padding: 6px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+.test::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.margin-top {
+  margin-top: 5%;
+}
+
