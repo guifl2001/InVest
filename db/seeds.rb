@@ -12,7 +12,7 @@ User.create(email: "edu@estudante.com", password: "estudante")
 
 puts "Creating all"
 require 'csv'
-path = "/home/guilherme/code/guifl2001/InVest/db/universidade_cursos_updated.csv"
+path = "/home/bruno/code/guifl2001/InVest/db/universidade_cursos_updated.csv"
 
 
 # Seed para cadastrar todas as Faculdade sem repetidas
