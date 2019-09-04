@@ -1,8 +1,90 @@
-<%= @faculdade.name %>
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
+<div class="facu-container">
+
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="facul-banner " style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
+        <h1><%= @faculdade.name %></h1>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="padding: 3vh;">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="facu-box">
+        <p><h1>Reviews</h1>Lorem ipsum nullam
+         dolor sapien tincidunt vitae litora accumsan</p>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="facu-box">
+        <p><h1>Cursos famosos </h1> Lorem ipsum nullam dolor sapien tincidunt vitae litora accumsan.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row tab-center">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="tabset">
+        <!-- Tab 1 -->
+        <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
+        <label for="tab1" style="margin-left: 19vh;">
+          <i class="fa fa-graduation-cap"></i><h2>Infos</h2>
+        </label>
+            <!-- Tab 2 -->
+        <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
+        <label for="tab2">
+          <i class="fa fa-map"></i><h2>Map</h2>
+        </label>
+            <!-- Tab 3 -->
+        <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
+        <label for="tab3">
+          <i class="fa fa-plus-circle"></i><h2>More</h2>
+        </label>
+        <div class="tab-panels">
+          <section id="marzen" class="tab-panel">
+            <h2>Infos</h2>
+            <p><strong>Historia</strong> An elegant, malty German amber lager with a clean, rich, toasty and bready malt flavor.</p>
+            <p><strong>Geral</strong> Campus principal
+            Endereço: R. Venâncio Borges do Nascimento, 377 - Jardim TV Morena - Campo Grande - MS</p>
+            <p>CEP: 79050-700</p>
+            <p><strong>Telefone do campus:</strong> (67) 3348-8800</p>
+            <p><strong>Telefone da instituição:</strong>0800-8806767/4003-6767</p>
+            <p><strong>Site:</strong> www.estacio.br</p>
+            <p><strong>E-mail:</strong> secretaria.fes@estacio.br</p>
+            <p><strong>Tipo de instituição:</strong> Privada</p>
+          </section>
+          <section id="rauchbier" class="tab-panel">
+            <h2>Localizaçao</h2>
+            <div
+              id="map"
+              style="width: 100%;
+                  width: 448px;
+                  height: 371px;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+            ></div>
+          </section>
+          <section id="dunkles" class="tab-panel">
+            <h2>A mais</h2>
+            <p><strong>Mais infos: </strong></p>
+            <p><strong>Periodicidade: </strong>
+            Semestral</p>
+            <p><strong>Enem: </strong>
+            Substitui o processo seletivo para todos os cursos e vagas</p>
+            <p><strong>Cotas: </strong>
+            Não adota</p>
+            <p><strong>Prouni: </strong>
+            Credenciada</p>
+            <p><strong>FIES: </strong>
+            Credenciada</p>
+          </section>
+        </div>
+
+      </div>
+
+      <p><small>Source: <cite><a href="https://www.bjcp.org/stylecenter.php">BJCP Style Guidelines</a></cite></small></p>
+
+    </div>
+  </div>
+
+</div>
