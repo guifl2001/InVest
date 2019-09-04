@@ -7,4 +7,8 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 
+import { table } from '../components/table';
+table();
+
 AOS.init();
+

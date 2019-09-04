@@ -1,1 +1,36 @@
-<%= @curso.name %>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700|Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+
+<% image = image_path('curso.jpg') %>
+<section class="hero image-as-background" style="background-image: url('<%= image %>');">
+  <div class="hero-container">
+    <h1 class="hero-title animate fadeInLeft delay-600"><%= @curso.name %></h1>
+  </div>
+</section>
+<section class="main-content">
+  <h2>Saiba mais sobre esse curso</h2>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+  <div class="container-index">
+
+    <div class="table">
+      <div class="table-header">
+        <div class="header__item"><a id="name" class="filter__link" href="#">Faculdades</a></div>
+        <div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Notas</a></div>
+        <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Estado</a></div>
+        <div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Cidade</a></div>
+        <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Situação</a></div>
+      </div>
+      <% @curso.faculdades.first(5).each do |f| %>
+      <div class="table-content">
+        <div class="table-row">
+          <div class="table-data"><%= f.sigla %></div>
+          <div class="table-data">5</div>
+          <div class="table-data">SP</div>
+          <div class="table-data">SP</div>
+          <div class="table-data">Ativa</div>
+        </div>
+      <% end %>
+        </div>
+      </div>
+    </div>
+</section>
