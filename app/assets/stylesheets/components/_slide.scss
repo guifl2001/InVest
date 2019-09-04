@@ -1,0 +1,24 @@
+.slider {
+  background-color: $light-gray;
+  .slide {
+    text-align: center;
+    padding: 0 15px;
+    .slick-slide {
+      display: flex;
+      justify-content: center;
+    }
+    img {
+      width: 150px;
+      margin: 0 auto;
+      filter: grayscale(100%);
+      opacity: 0.8;
+      transition: 0.5s ease;
+      &:hover {
+        transform: scale(1.1);
+        filter: grayscale(0);
+        opacity: 1;
+      }
+    }
+  }
+}
+

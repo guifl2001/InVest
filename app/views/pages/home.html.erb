@@ -24,43 +24,49 @@
         </div>
       </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
   </div>
 
-<div class="cards">
-  <div class="card-trip">
-    <img src="https://picsum.photos/id/314/400/300" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Title here</h2>
-        <p>Short description here!</p>
-      </div>
+<div class="container">
+  <div class="about">
+    <h2>About</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus corrupti, vero fugit hic officiis et optio sint nobis nesciunt porro numquam totam doloremque voluptas officia, maxime temporibus, non sunt.</p>
+  </div>
+  <hr>
+  <div class="resume" data-aos="fade-right">
+    <div class="img-container">
+      <%= image_tag 'graduation.png' %>
+    </div>
+    <div class="text">
+      <h2>Escolha seu curso</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, voluptates.</p>
     </div>
   </div>
-  <div class="card-trip">
-    <img src="https://picsum.photos/id/314/400/300"/>
-    <div class="card-trip-infos">
-      <div>
-        <h2>Title here</h2>
-        <p>Short description here!</p>
-      </div>
+  <div class="resume reverse" data-aos="fade-left">
+    <div class="img-container">
+      <%= image_tag 'online-university.png' %>
+    </div>
+    <div class="text">
+      <h2>Veja as melhores faculdades</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, voluptates.</p>
     </div>
   </div>
-  <div class="card-trip">
-    <img src="https://picsum.photos/id/314/400/300"/>
-    <div class="card-trip-infos">
-      <div>
-        <h2>Title here</h2>
-        <p>Short description here!</p>
-      </div>
+  <div class="resume" data-aos="fade-right">
+    <div class="img-container">
+      <%= image_tag 'timetable.png' %>
+    </div>
+    <div class="text">
+      <h2>Consulte o calendario de provas</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, voluptates.</p>
     </div>
   </div>
 </div>
+
+  <div class="slider">
+    <div class="slide"><%= image_tag 'usp.png' %></div>
+    <div class="slide"><%= image_tag 'unesp.png' %></div>
+    <div class="slide"><%= image_tag 'insper.png' %></div>
+    <div class="slide"><%= image_tag 'unicamp.png' %></div>
+    <div class="slide"><%= image_tag 'ibmec.png' %></div>
+    <div class="slide"><%= image_tag 'ufrj.png' %></div>
+  </div>
 

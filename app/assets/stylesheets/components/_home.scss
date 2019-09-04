@@ -1,84 +1,63 @@
-.card-trip {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 30px 15px;
-
-}
-
-.card-trip > img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-
-
-.card-trip .card-trip-infos {
-  padding: 16px;
+.resume {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-  background-color: $lighter-orange;
-  color: white;
-}
+  align-items: center;
+  justify-content: center;
+  padding: 5% 2%;
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    h2 {
+      font-weight: bolder;
+      color: black;
+      margin-bottom: 5px;
+      font-size: 25px;
+    }
+    p {
+      font-weight: 300;
+      color: $dark-gray;
+      font-size: 20px;
+      padding: 2%;
+      margin: 0;
+    }
+  }
+  .img-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  img {
+      object-fit: cover;
+      width:60%;
+    }
+  }
+  &:hover {
 
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
-
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
   }
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
+.reverse {
+  flex-direction: row-reverse;
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
+.about {
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  h2 {
+    font-weight: bolder;
+    font-size: 30px;
   }
+  p {
+  font-weight: 300;
+  color: $dark-gray;
+  font-size: 20px;
+  padding: 2%;
+  margin: 0;
 }
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }
