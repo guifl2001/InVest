@@ -34,9 +34,6 @@
       width:60%;
     }
   }
-  &:hover {
-
-  }
 }
 
 .reverse {
@@ -60,4 +57,10 @@
   padding: 2%;
   margin: 0;
 }
+}
+
+.none-dec {
+  &:hover {
+    text-decoration: none;
+  }
 }
