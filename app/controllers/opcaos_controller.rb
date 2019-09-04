@@ -9,9 +9,9 @@ class OpcaosController < ApplicationController
     if params[:query].present?
       # @opcaos = Opcao.where(vagas: params[:query])
 
-      @opcaos = Opcao.where("ocde_curso ILIKE ?", "%#{params[:query]}%")
+      @opcaos = Opcao.where("ocde_curso ILIKE ?", "%#{params[:query]}%").page(params[:page]).per(16)
     else
-      @opcaos = Opcao.all
+      @opcaos = Opcao.all.page(params[:page]).per(16)
     end
   end
 end

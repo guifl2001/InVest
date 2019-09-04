@@ -1,55 +1,35 @@
-<div class="filter">
-
-  <h3>Filtrar</h3>
-
-
-  <div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn">Escolhe um curso</button>
-    <div id="myDropdown" class="dropdown-content">
-      <input type="text" placeholder="Search.." id="query" onkeyup="filterFunction()">
-        <% ocde_hash = [] %>
-      <% @cursos.each do |curso| %>
-
-        <% if ocde_hash.include?(curso.ocde_geral) == false %>
-          <% ocde_hash << curso.ocde_geral %>
-          <% else %>
-        <% end %>
-
-        <a href=""> <%=ocde_hash.first %></a>
-
-        <% end %>
-    </div>
+<div class="filter my-5">
+  <div class="test">
+  <%= form_tag opcaos_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    id: "query",
+    placeholder: "Busca uma matéria"%>
+  <%= submit_tag "Search", class: "button fa fa-search" %>
+  <% end %>
   </div>
-
-
 </div>
-
-
-
-<%= form_tag opcaos_path, method: :get do %>
-<%= text_field_tag :query,
-  params[:query],
-  class: "form-control",
-  id: "query",
-  placeholder: "Busca uma matéria"%>
-<%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
 
 <div class="grids">
 
 <% @opcaos.each do |o| %>
-  <div class="card-cursos">
+  <div class="card-opcao">
   <img src="https://picsum.photos/id/237/500/200" />
-    <div class="card-cursos-infos">
+    <div class="card-opcao-infos">
       <div>
         <h2><%= link_to o.curso.name, opcao_path(o), class: "decoration curso-decoration" %></h2>
-        <h3><%= o.faculdade.sigla %></h3>
-        <p></p>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nobis quaerat quasi unde facilis dolorem odit, odio, vel a aliquid eligendi qui voluptatibus totam, omnis beatae natus inventore dolores ullam.</p>
+        <% if o.faculdade.sigla == "-" %>
+          <h5><%= o.faculdade.name %></h5>
+        <% else %>
+          <h5><%= o.faculdade.sigla %></h5>
+        <% end %>
       </div>
     </div>
   </div>
 <% end %>
+</div>
+
+<div class='pagination-section'>
+  <%= paginate @opcaos %>
 </div>
