@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_172736) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "OCDE_geral"
+    t.string "ocde_geral"
   end
 
   create_table "faculdades", force: :cascade do |t|
@@ -53,10 +53,10 @@ ActiveRecord::Schema.define(version: 2019_09_03_172736) do
     t.string "grau"
     t.string "modalidade"
     t.string "ano_criacao"
-    t.integer "CC"
+    t.integer "cc"
     t.integer "vagas"
-    t.integer "ENADE"
-    t.string "OCDE_curso"
+    t.integer "enade"
+    t.string "ocde_curso"
     t.index ["curso_id"], name: "index_opcaos_on_curso_id"
     t.index ["faculdade_id"], name: "index_opcaos_on_faculdade_id"
   end
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2019_09_03_172736) do
     t.string "photo"
     t.string "address"
     t.string "phone_number"
-    t.string "age"
+    t.integer "age"
     t.string "college"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

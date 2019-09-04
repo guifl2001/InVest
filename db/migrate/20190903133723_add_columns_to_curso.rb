@@ -1,5 +1,5 @@
 class AddColumnsToCurso < ActiveRecord::Migration[5.2]
   def change
-    add_column :cursos, :OCDE_geral, :string
+    add_column :cursos, :ocde_geral, :string
   end
 end
