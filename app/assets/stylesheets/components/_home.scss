@@ -59,6 +59,15 @@
 }
 }
 
+.curso-decoration {
+  text-decoration: none;
+  color: white;
+}
+
+.curso-decoration:hover {
+  text-decoration: none;
+  color: black;
+}
 .none-dec {
   &:hover {
     text-decoration: none;
