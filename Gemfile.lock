@@ -101,6 +101,8 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
+    jquery-slick-rails (1.9.0)
+      railties (>= 3.1)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -243,7 +245,11 @@ DEPENDENCIES
   font-awesome-sass (~> 5.6.1)
   geocoder
   jbuilder (~> 2.0)
+<<<<<<< HEAD
   kaminari
+=======
+  jquery-slick-rails
+>>>>>>> 9c7f8eddadc66637600047ade225277b29a47f70
   listen (~> 3.0.5)
   pg (~> 0.21)
   pg_search
