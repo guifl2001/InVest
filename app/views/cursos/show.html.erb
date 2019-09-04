@@ -21,7 +21,7 @@
       <% @curso.faculdades.first(5).each do |f| %>
       <div class="table-content">
         <div class="table-row">
-          <div class="table-data"><%= f.sigla %></div>
+          <div class="table-data"><%= link_to f.sigla == "-" ? f.name : f.sigla, opcao_path(Opcao.where(curso_id: @curso, faculdade_id: f).first) %></div>
           <div class="table-data">5</div>
           <div class="table-data">SP</div>
           <div class="table-data">SP</div>
