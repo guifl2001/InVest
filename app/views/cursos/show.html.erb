@@ -12,11 +12,11 @@
 
     <div class="table">
       <div class="table-header">
-        <div class="header__item"><a id="name" class="filter__link" href="#">Faculdades</a></div>
-        <div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Notas</a></div>
-        <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Estado</a></div>
-        <div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Cidade</a></div>
-        <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Situação</a></div>
+        <div class="header__item"><p>Faculdades</p></div>
+        <div class="header__item"><p>Notas</p></div>
+        <div class="header__item"><p>Estado</p></div>
+        <div class="header__item"><p>Cidade</p></div>
+        <div class="header__item"><p>Situação</p></div>
       </div>
       <% @curso.faculdades.first(5).each do |f| %>
       <div class="table-content">

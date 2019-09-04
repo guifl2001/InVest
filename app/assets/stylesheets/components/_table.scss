@@ -46,6 +46,7 @@ $color-form-highlight: #EEEEEE;
 }
 
 .header__item {
+  color:white;
   text-transform:uppercase;
 }
 
@@ -99,7 +100,7 @@ $color-form-highlight: #EEEEEE;
 
   // Add a slight overlay on our image
   &:after {
-    background-color: rgba(62,92,135,.5);
+    background: linear-gradient(0deg,rgba(44,44,44,.2),rgba(224,23,3,.6));
     bottom: 0;
     content: '';
     left: -2000%;
@@ -113,7 +114,7 @@ $color-form-highlight: #EEEEEE;
 .hero-container {
   box-sizing: border-box;
   height: auto;
-  padding: 30px 50px;
+  padding: 50px 50px;
   position: relative;
   z-index: 2;
 
@@ -136,18 +137,6 @@ $color-form-highlight: #EEEEEE;
     text-transform: uppercase;
     text-align: left;
   }
-}
-
-.hero-button {
-  background: rgba(255,255,255,0.8);
-  color: #44575b;
-  font-size: 24px;
-  float: left;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 30px;
-  padding: 20px 90px;
-  text-decoration: none;
 }
 
 .hero-title {
