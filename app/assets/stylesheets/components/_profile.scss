@@ -77,26 +77,54 @@
 }
 
 .opcaos {
+  display: flex;
+  align-items: center;
   margin-top: 2%;
-  height: 40vh;
+  height: 45vh;
   .slick-list {
     height: 100%;
+    padding: 30px 50px 0px !important;
+  }
+
+  .slick-slide {
+    opacity: 0;
+    transition: 0.5s ease;
+  }
+
+  .slick-active {
+    opacity: 1;
+    transition: 0.5s ease;
+  }
+
+  .slick-current {
+    transform: scale(1.1);
+    transition: 0.5s ease;
   }
 }
 
 .op-card {
-  padding: 0 10px;
-  height: 100%
+  padding: 0 20px;
+  height: 100%;
 }
 
 .op-card-body {
   border-radius: 5px;
-  height: 38vh;
+  height: 35vh;
   overflow: hidden;
-  margin-top: 5px;
+  margin-top: 8px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.15);
+  transition: 0.2s linear;
+  &:hover {
+    border-bottom: 3px solid $primary-color;
+    transform: translateY(-1px);
+  }
   img {
     width: 100%;
+  }
+  a {
+    &:hover {
+      text-decoration: none;
+    }
   }
   .text-area {
     padding: 10px;
@@ -112,3 +140,5 @@
     }
   }
 }
+
+
