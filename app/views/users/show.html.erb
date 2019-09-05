@@ -3,7 +3,7 @@
       <div class="page-header-image" data-parallax="true" style="background-image: linear-gradient(0deg,rgba(44,44,44,.2),rgba(224,23,3,.6)), url('https://images.unsplash.com/photo-1501503069356-3c6b82a17d89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');">
         <div class="profile-container">
           <%= image_tag "https://images.unsplash.com/photo-1529008338-310c24f458ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80", class: "avatar", style: 'height:150px ;width:150px;object-fit:cover' %>
-          <h3 class="title">Ryan Scheinder</h3>
+          <h3 class="title"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
           <p class="category">Photographer</p>
           <div class="button-container">
             <a href="#button" class="btn btn-round" rel="tooltip" title="Follow me on Twitter">
@@ -30,7 +30,9 @@
             <%= @user.user_opcaos.each do |user_opcao| %>
               <div class="op-card">
                 <div class="op-card-body">
-                  <%= link_to "+", user_opcao_path(user_opcao), method: :delete, data: { confirm: "Are you sure?" }, class: "card-remove-link" %>
+                  <% if @user == current_user %>
+                    <%= link_to "+", user_opcao_path(user_opcao), method: :delete, data: { confirm: "Are you sure?" }, class: "card-remove-link" %>
+                  <% end %>
                   <%= image_tag "https://images.unsplash.com/photo-1552515941-29d256554e11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=890&q=80" %>
                   <%= link_to opcao_path(user_opcao.opcao) do %>
                     <div class="text-area">
@@ -47,7 +49,9 @@
             <% @user.user_opcaos.each do |user_opcao| %>
               <div class="op-card">
                 <div class="op-card-body">
-                  <%= link_to "+", user_opcao_path(user_opcao), method: :delete, data: { confirm: "Are you sure?" }, class: "card-remove-link" %>
+                  <% if @user == current_user %>
+                    <%= link_to "+", user_opcao_path(user_opcao), method: :delete, data: { confirm: "Are you sure?" }, class: "card-remove-link" %>
+                  <% end %>
                   <%= image_tag "https://images.unsplash.com/photo-1552515941-29d256554e11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=890&q=80" %>
                   <%= link_to opcao_path(user_opcao.opcao) do %>
                     <div class="text-area">
@@ -68,3 +72,4 @@
       </div>
     </div>
   </div>
+<!-- dsads -->
