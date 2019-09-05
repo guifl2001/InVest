@@ -13,9 +13,15 @@
     }
   }
   .user-text {
+    margin-top: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    &:hover {
+      a {
+       text-decoration: none;
+      }
+    }
   }
   .bg-img {
     display: flex;
