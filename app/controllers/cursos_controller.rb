@@ -1,9 +1,9 @@
 class CursosController < ApplicationController
   def index
-    if params[:query].present?
-      @cursos.where(params[:query].to_s)
+    if params[:curso].present?
+      @cursos = Curso.where("name ILIKE ?", "%#{params[:curso]}%").page(params[:page]).per(16)
     else
-      @cursos = Curso.all
+      @cursos = Curso.all.page(params[:page]).per(16)
     end
   end
 

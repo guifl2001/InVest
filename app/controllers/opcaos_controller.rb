@@ -8,11 +8,11 @@ class OpcaosController < ApplicationController
   def index
     @opcaos = Opcao.all.page(params[:page]).per(16)
 
-    if params[:facu].present? && params[:curso].present?
+    if params[:facu].present? && params[:opçao].present?
       @opcaos = Opcao.joins(:faculdade).where("sigla ILIKE ? AND ocde_curso ILIKE ?", "%#{params[:facu]}%",
-                                              "%#{params[:curso]}%").page(params[:page]).per(16)
-    elsif params[:curso].present?
-      @opcaos = Opcao.where("ocde_curso ILIKE ?", "%#{params[:curso]}%").page(params[:page]).per(16)
+                                              "%#{params[:opçao]}%").page(params[:page]).per(16)
+    elsif params[:opçao].present?
+      @opcaos = Opcao.where("ocde_curso ILIKE ?", "%#{params[:opçao]}%").page(params[:page]).per(16)
     elsif params[:facu].present?
       @opcaos = Opcao.joins(:faculdade).where("sigla ILIKE ?", "%#{params[:facu]}%").page(params[:page]).per(16)
     else
