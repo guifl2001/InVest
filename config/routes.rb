@@ -21,5 +21,5 @@ Rails.application.routes.draw do
   resources :opcaos, only: %i[show index]
 
   #user_opcao
-  resources :user_opcaos, only: %i[create new delete]
+  resources :user_opcaos, only: %i[create new destroy]
 end
