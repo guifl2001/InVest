@@ -12,6 +12,16 @@ $('.slider').slick({
   autoplay:true,
   arrows: false,
   dots: false,
+  pauseOnHover: true,
+  responsive: [
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 });
 
 // slider from user profile
@@ -21,4 +31,14 @@ $('.opcaos').slick({
   autoplay:false,
   arrows: false,
   dots: true,
+  pauseOnHover: true,
+  responsive: [
+    {
+      breakpoint: 800,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 });
