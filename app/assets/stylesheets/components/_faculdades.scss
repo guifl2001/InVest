@@ -18,9 +18,6 @@
 
 }
 
-
-
-
 .facul-banner {
   align-items: center;
   background-size: cover;
@@ -120,12 +117,151 @@
   }
 }
 
-.fa {
-  font-size: 7vh;
+.tabset {
+  .fa {
+    font-size: 7vh;
+  }
 }
-
 
 #map {
   width: 361px;
   height: 361px;
+}
+
+
+
+.comments {
+  h1, h2 {// Going to have to switch this to something i can @extend
+    margin-left: 14px;
+  }
+
+  h1 {
+    margin-bottom: 0.1em;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  form {
+    h2 {
+      margin-left: 0px;
+    }
+
+    textarea {
+      height: 80px;
+    }
+  }
+
+  .comment {
+    h3 {
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
+    p {
+      font-size: 0.9em;
+    }
+
+    padding: 1.5em;
+    border: 1px solid #e8e8e8;
+    margin-bottom: 1em;
+  }
+}
+
+
+
+.info-icon {
+  text-align: center;
+}
+.info-icon .icon {
+  font-size: 62px;
+  line-height: 66px;
+  color: #c5a47e;
+  margin-bottom: 10px;
+}
+.info-icon .description {
+  margin-top: 15px;
+  color: #777777;
+}
+
+.section {
+  padding: 4vh 0;
+  position: relative;
+  background-color: #FFFFFF;
+}
+
+.section .title-area {
+  max-width: 760px;
+  margin: 0 auto 70px;
+  display: block;
+  padding: 0 15px;
+  text-align: center;
+}
+.section .title-area .description {
+  font-size: 16px;
+  color: #777777;
+}
+.section [class*="col-"] .title-area {
+  padding: 0;
+}
+
+.row-container {
+  margin: 0;
+  display: flex;
+  flex-direction: columns;
+  justify-content: space-around;
+  border-bottom: 1px solid;
+  border-bottom-color: ccc;
+  padding-bottom: 5vh;
+}
+
+.row-container {
+  .fa {
+    font-size: 7vh;
+    color: #f96332;
+    opacity: 0.9;
+    margin-bottom: 3vh;
+  }
+}
+
+.comments {
+  text-align: center;
+}
+
+.comments h2 {
+    margin-bottom: 2vh;
+}
+
+.comments .comment {
+    padding: 1.5em;
+    border: 2px solid #E8E8E8;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    /* box-shadow: 0 0 0; */
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+
+.comments form textarea {
+    height: 12vh;
+    border-radius: 5px;
+    width: 56vh;
+}
+
+.comment-submit {
+  button:not(:disabled), [type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled) {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #f96332;
+    opacity: 0.85;
+    color: white;
+  }
+}
+
+.comment-submit {
+  button:hover {
+    opacity: 1;
+    border: solid;
+    border-color: white;
+  }
 }
