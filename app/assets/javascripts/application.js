@@ -17,8 +17,8 @@ $('.slider').slick({
     {
       breakpoint: 800,
       settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToShow: 2,
+        slidesToScroll: 2
       }
     }
   ]
@@ -29,8 +29,8 @@ $('.opcaos').slick({
   centerMode: true,
   slidesToShow: 3 ,
   autoplay:false,
-  arrows: false,
-  dots: true,
+  arrows: true,
+  dots: false,
   pauseOnHover: true,
   responsive: [
     {
