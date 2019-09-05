@@ -1,14 +1,22 @@
 <div class="filter margin-top">
   <div class="test">
   <%= form_tag opcaos_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
+
+    <%= text_field_tag :curso,
+      params[:curso],
+      class: "form-control",
+      id: "query",
+      placeholder: "Busca uma matéria"%>
+
+    <%= text_field_tag :facu,
+    params[:facu],
     class: "form-control",
     id: "query",
-    placeholder: "Busca uma matéria"%>
-  <%= button_tag type: 'submit', class: "button" do %>
-    <i class=" fa fa-search" aria-hidden="true"><span class="my-0"> Buscar </span></i>
-  <% end %>
+    placeholder: "Busca uma faculdade"%>
+
+    <%= button_tag type: 'submit', class: "button" do %>
+      <i class=" fa fa-search" aria-hidden="true"><span class="my-0"> Buscar </span></i>
+    <% end %>
   <% end %>
   <%= link_to "Ver todas", opcaos_path, class: "curso-decoration bold" %>
   </div>

@@ -1,4 +1,7 @@
 import "bootstrap";
+
+
+
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import AOS from 'aos';
