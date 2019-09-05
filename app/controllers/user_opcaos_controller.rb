@@ -1,4 +1,6 @@
 class UserOpcaosController < ApplicationController
+  before_action :set_user_opcao, only: [:destroy]
+
   def new
     @user_opcao = UserOpcao.new
   end
@@ -13,7 +15,11 @@ class UserOpcaosController < ApplicationController
   end
 
   def destroy
-    @user_opcao.destroy
-    redirect_to @opcao
+    @user_opcao.delete
+    redirect_to current_user
+  end
+
+  def set_user_opcao
+    @user_opcao = UserOpcao.find(params[:id])
   end
 end
