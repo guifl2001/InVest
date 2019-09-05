@@ -14,7 +14,7 @@
     id: "query",
     placeholder: "Busca uma faculdade"%>
 
-    <%= button_tag type: 'submit', class: "button" do %>
+    <%= button_tag type: 'submit', class: "button-opcaos" do %>
       <i class=" fa fa-search" aria-hidden="true"><span class="my-0"> Buscar </span></i>
     <% end %>
   <% end %>
@@ -26,7 +26,7 @@
 
 <% @opcaos.each do |o| %>
   <div class="card-opcao">
-  <img src="https://picsum.photos/id/237/500/200" />
+  <img src="https://picsum.photos/id/237/500/200"/>
     <div class="card-opcao-infos">
       <div>
         <h2><%= link_to o.curso.name, opcao_path(o), class: "decoration curso-decoration" %></h2>
