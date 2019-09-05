@@ -3,7 +3,11 @@
     <% @users.each do |user| %>
        <div class="user-card">
         <div class="bg-img">
-          <%= image_tag "https://images.unsplash.com/photo-1529008338-310c24f458ac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=375&q=80", class: "avatar user-img", style: 'height:100px ;width:100px;object-fit:cover' %>
+          <% if user.photo.present? %>
+            <%= cl_image_tag user.photo, class: "avatar user-img", style: 'height:100px ;width:100px;object-fit:cover' %>
+          <% else %>
+            <%= image_tag "user.png", class: "avatar user-img", style: 'height:100px ;width:100px;object-fit:cover' %>
+          <% end %>
         </div>
         <div class="user-text">
           <%= link_to user_path(user) do %>
@@ -17,7 +21,7 @@
             <a href="#button" class="btn btn-round" rel="tooltip" title="Follow me on Instagram">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="#button" class="btn btn-round" rel="tooltip" title="Follow me on Instagram">
+            <a href="#button" class="btn btn-round" rel="tooltip" title="Follow me on Facebook">
               <i class="fab fa-facebook"></i>
             </a>
           </div>
