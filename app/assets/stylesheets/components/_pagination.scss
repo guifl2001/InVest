@@ -1,0 +1,16 @@
+.pagination-section {
+  padding-top: 1%;
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: center;
+  a {
+    background-color: transparent;
+    color: black;
+  }
+  .page-item.active {
+    a {
+      background-color: $orange-bg;
+      border-color: black;
+    }
+  }
+}

@@ -7,14 +7,15 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
+@import "slick";
+@import 'slick-theme';
+@import 'aos/dist/aos.css';
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 @import "components/forms";
 @import "components/banner";
 @import "components/home";
-@import "components/cursos";
 @import "components/faculdades";
 @import "components/footer";
 
