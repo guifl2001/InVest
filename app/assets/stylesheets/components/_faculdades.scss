@@ -1,6 +1,6 @@
 .facu-container {
   height: 273vh;
-  background-image: white;
+  background-image: linear-gradient(0deg,rgba(44,44,44,.2),rgba(224,23,3,.6));
 }
 
 
@@ -8,14 +8,14 @@
   background-color: white;
   padding: 3vh;
   margin-bottom: 4vh;
-  height: 188vh;
+  height: 70vh;
   font-weight:1vh;
   p {
     padding: 0.3vh;
   }
   box-shadow: 0 10px 30px rgba(0,0,0,.3);
   border-radius: 5px;
-
+  background: #f9f1f1;
 }
 
 
@@ -36,6 +36,41 @@
   justify-content: center;
   margin-bottom: 6vh;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+
+.facu-card  {
+  overflow: hidden;
+  height: 22vh;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+
+}
+
+.facu-card  img {
+  height: 100%;
+  width: 193px;
+  object-fit: cover;
+}
+
+.facu-card  h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.facu-card  p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.facu-card  .facu-card-infos {
+  padding: 16px;
 }
 
 
@@ -75,7 +110,7 @@
   border: 1px solid transparent;
   border-bottom: 0;
   cursor: pointer;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 
@@ -98,7 +133,6 @@
   border-top: 1px solid #ccc;
 }
 
-
 /*
  Demo purposes only
 */
@@ -111,21 +145,12 @@
 
 .tabset {
   max-width: 65em;
-
+  background: #f9f1f1;
   border-radius: 5px;
   padding: 5vh;
   box-shadow: 0 10px 30px rgba(0,0,0,.3);
-  h2 {
-    font-size: 4vh;
-  }
 }
 
 .fa {
   font-size: 7vh;
-}
-
-
-#map {
-  width: 361px;
-  height: 361px;
 }

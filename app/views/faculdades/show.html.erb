@@ -3,17 +3,31 @@
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="facul-banner " style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
-        <h1><%= @faculdade.name %>,(<%= @faculdade.sigla %>)</h1>
+        <h1><%= @faculdade.name %></h1>
       </div>
     </div>
   </div>
   <div class="row" style="padding: 3vh;">
-    <div class="col-lg-4 col-md-4 col-sm-12">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="facu-box">
+        <p><h1>Reviews</h1>Lorem ipsum nullam
+         dolor sapien tincidunt vitae litora accumsan</p>
+      </div>
+    </div>
 
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="facu-box">
+        <p><h1>Cursos famosos </h1> Lorem ipsum nullam dolor sapien tincidunt vitae litora accumsan.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row tab-center">
+    <div class="col-lg-6 col-md-6 col-sm-12">
       <div class="tabset">
         <!-- Tab 1 -->
         <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
-        <label for="tab1" style="margin-left: ;">
+        <label for="tab1" style="margin-left: 19vh;">
           <i class="fa fa-graduation-cap"></i><h2>Infos</h2>
         </label>
             <!-- Tab 2 -->
@@ -44,8 +58,8 @@
             <div
               id="map"
               style="width: 100%;
-                  width: 349px;
-                  height: 361px;"
+                  width: 448px;
+                  height: 371px;"
               data-markers="<%= @markers.to_json %>"
               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
             ></div>
@@ -65,17 +79,12 @@
             Credenciada</p>
           </section>
         </div>
-      </div>
-    </div>
-    <div class="col-lg-8 col-md-8 col-sm-12">
-      <div class="facu-box">
-        <p><h1>A instituição</h1>Tradição e família</p>
-         <p><h1>Cursos polulares</h1>
-         engenharia da computacao, Medicina, Arte</p>
-         <p><h1>Reviews</h1>Lorem ipsum nullam
-         dolor sapien tincidunt vitae litora accumsan</p>
-      </div>
-    </div>
 
+      </div>
+
+      <p><small>Source: <cite><a href="https://www.bjcp.org/stylecenter.php">BJCP Style Guidelines</a></cite></small></p>
+
+    </div>
   </div>
+
 </div>
