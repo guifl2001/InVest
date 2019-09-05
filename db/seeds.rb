@@ -13,7 +13,7 @@
 # puts "Creating all"
 # require 'csv'
 
-# path = "/home/guillaume/code/guifl2001/InVest/db/universidade_cursos_updated.csv"
+# path = "/home/bruno/code/guifl2001/InVest/db/universidade_cursos_updated.csv"
 
 # # Seed para cadastrar todas as Faculdade sem repetidas
 # CSV.foreach(path) do |row|
@@ -65,13 +65,22 @@
 #   end
 # end
 
-User.all.each do |user|
-  cursos = Curso.all.sample.opcaos
-  5.times {
-    new_op = UserOpcao.new()
-    new_op.user_id = user.id
-    new_op.opcao_id = cursos.sample.id
-    p new_op.valid?
-    new_op.save
-  }
-end
+# def curso_sample
+#   curso = Curso.all.sample.opcaos
+#   while curso.count < 10 do
+#     curso = Curso.all.sample.opcaos
+#   end
+#   curso
+# end
+
+# User.all.each do |user|
+#   cursos = curso_sample
+#   5.times {
+#     user_op = UserOpcao.new()
+#     user_op.opcao_id = cursos.sample.id
+#     user_op.user_id = user.id
+#     puts user_op
+#     user_op.save
+#   }
+# end
+

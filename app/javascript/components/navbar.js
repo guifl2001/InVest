@@ -10,7 +10,7 @@ const initUpdateNavbarOnScroll = () => {
   const root = window.location.pathname
   if (navbar && rootPath()) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY >= (window.innerHeight - 200)) {
+      if (window.scrollY >= (window.innerHeight - 500)) {
         navbar.classList.remove('transparent');
       } else {
         navbar.classList.add('transparent');

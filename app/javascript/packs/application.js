@@ -6,7 +6,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { loadDynamicBannerText } from '../components/banner';
 
 initUpdateNavbarOnScroll();
-loadDynamicBannerText();
+if (window.location.pathname === '/') { loadDynamicBannerText() };
 initMapbox();
 
 import { table } from '../components/table';
