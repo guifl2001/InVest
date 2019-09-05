@@ -65,22 +65,22 @@
 #   end
 # end
 
-# def curso_sample
-#   curso = Curso.all.sample.opcaos
-#   while curso.count < 10 do
-#     curso = Curso.all.sample.opcaos
-#   end
-#   curso
-# end
+def curso_sample
+  curso = Curso.all.sample.opcaos
+  while curso.count < 10 do
+    curso = Curso.all.sample.opcaos
+  end
+  curso
+end
 
-# User.all.each do |user|
-#   cursos = curso_sample
-#   5.times {
-#     user_op = UserOpcao.new()
-#     user_op.opcao_id = cursos.sample.id
-#     user_op.user_id = user.id
-#     puts user_op
-#     user_op.save
-#   }
-# end
+User.all.each do |user|
+  cursos = curso_sample
+  5.times {
+    user_op = UserOpcao.new()
+    user_op.opcao_id = cursos.sample.id
+    user_op.user_id = user.id
+    puts user_op
+    user_op.save
+  }
+end
 
