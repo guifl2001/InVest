@@ -86,20 +86,20 @@
     padding: 30px 50px 0px !important;
   }
 
-  .slick-slide {
-    opacity: 0;
-    transition: 0.5s ease;
-  }
+  // .slick-slide {
+  //   opacity: 0;
+  //   transition: 0.5s ease;
+  // }
 
-  .slick-active {
-    opacity: 1;
-    transition: 0.5s ease;
-  }
+  // .slick-active {
+  //   opacity: 1;
+  //   transition: 0.5s ease;
+  // }
 
-  .slick-current {
-    transform: scale(1.1);
-    transition: 0.5s ease;
-  }
+  // .slick-current {
+  //   transform: scale(1.1);
+  //   transition: 0.5s ease;
+  // }
 }
 
 .op-card {
@@ -117,9 +117,15 @@
   &:hover {
     border-bottom: 3px solid $primary-color;
     transform: translateY(-1px);
+    .card-remove-link {
+      color: white;
+      text-decoration: none;
+      opacity: 1;
+    }
   }
   img {
     width: 100%;
+    object-fit: cover;
   }
   a {
     &:hover {
@@ -142,3 +148,19 @@
 }
 
 
+.card-remove-link {
+  color: white;
+  border-radius: 50%;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  opacity: 0;
+  transform: rotate(45deg);
+  transition: 0.2s ease;
+}
