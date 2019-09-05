@@ -14,6 +14,8 @@
 # require 'csv'
 
 # path = "/home/bruno/code/guifl2001/InVest/db/universidade_cursos_updated.csv"
+endereco = "/home/guillaume/code/guifl2001/InVest/db/updated_endereco.csv"
+
 
 # # Seed para cadastrar todas as Faculdade sem repetidas
 # CSV.foreach(path) do |row|
@@ -27,6 +29,14 @@
 #       p faculdade.save
 #     end
 #   end
+
+CSV.foreach(endereco) do |row|
+  f = Faculdade.find_by("sigla ILIKE ?", row[1])
+  if f
+    p f.location = row[2]
+    f.save
+  end
+  end
 
 # # Seed para cadastrar todos os Cursos
 # CSV.foreach(path) do |row|
@@ -65,22 +75,23 @@
 #   end
 # end
 
-def curso_sample
-  curso = Curso.all.sample.opcaos
-  while curso.count < 10 do
-    curso = Curso.all.sample.opcaos
-  end
-  curso
-end
+# def curso_sample
+#   curso = Curso.all.sample.opcaos
+#   while curso.count < 10 do
+#     curso = Curso.all.sample.opcaos
+#   end
+#   curso
+# end
 
-User.all.each do |user|
-  cursos = curso_sample
-  5.times {
-    user_op = UserOpcao.new()
-    user_op.opcao_id = cursos.sample.id
-    user_op.user_id = user.id
-    puts user_op
-    user_op.save
-  }
-end
+# User.all.each do |user|
+#   cursos = curso_sample
+#   5.times {
+#     user_op = UserOpcao.new()
+#     user_op.opcao_id = cursos.sample.id
+#     user_op.user_id = user.id
+#     puts user_op
+#     user_op.save
+#   }
+# end
+
 
