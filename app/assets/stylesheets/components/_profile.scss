@@ -86,20 +86,20 @@
     padding: 30px 50px 0px !important;
   }
 
-  // .slick-slide {
-  //   opacity: 0;
-  //   transition: 0.5s ease;
-  // }
+  .slick-slide {
+    opacity: 0;
+    transition: 0.5s ease;
+  }
 
-  // .slick-active {
-  //   opacity: 1;
-  //   transition: 0.5s ease;
-  // }
+  .slick-active {
+    opacity: 1;
+    transition: 0.5s ease;
+  }
 
-  // .slick-current {
-  //   transform: scale(1.1);
-  //   transition: 0.5s ease;
-  // }
+  .slick-current {
+    transform: scale(1.1);
+    transition: 0.5s ease;
+  }
 }
 
 .op-card {
@@ -163,4 +163,28 @@
   opacity: 0;
   transform: rotate(45deg);
   transition: 0.2s ease;
+}
+
+.opcs {
+  display: flex;
+  justify-content: center;
+  .op-card {
+    width: 400px;
+    max-width: 50vw;
+  }
+  img {
+    height: 25vh;
+  }
+}
+
+.no-choice {
+  text-align: center;
+  h4 {
+    max-width: 700px;
+    margin: 20px auto 75px;
+    color: #9A9A9A;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: center;
+  }
 }
