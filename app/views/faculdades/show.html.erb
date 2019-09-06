@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="facul-banner " style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);">
-        <h1><%= @faculdade.name %>,(<%= @faculdade.sigla %>)</h1>
+        <h1><%= @faculdade.name %> (<%= @faculdade.sigla %>)</h1>
       </div>
     </div>
   </div>
@@ -82,7 +82,7 @@
                 <div class="row-container">
                     <div class="col-lg-4">
                         <div class="info-icon">
-                            <i class="fa fa-thumbs-up"></i>
+                            <i class="fa fa-magic"></i>
                             <h3>Ideia</h3>
                             <p class="description">Visão
                               “Pensar a Educação como uma forma de desenvolvimento e valorização e tranformação do indivíduo e a sua inserção no mundo do trabalho e na sociedade.</p>
@@ -91,8 +91,13 @@
                     <div class="col-lg-4">
                         <div class="info-icon">
                             <i class="fa fa-fire"></i>
-                            <h3>Cusos pop</h3>
-                            <p class="description">Ciencia da comp, Engenharia da comp, Direito, Math</p>
+                            <h3>Cursos pop</h3>
+                            <p class="description-facu">
+                              <% count = 0 %>
+                              <% @faculdade.cursos.first(8).each do |curso| %>
+                                <%= curso.name %>;
+                              <% end %>
+                            </p>
                         </div>
                     </div>
 
