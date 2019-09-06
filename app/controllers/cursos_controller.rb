@@ -9,5 +9,6 @@ class CursosController < ApplicationController
 
   def show
     @curso = Curso.find(params[:id])
+    @redirect = @curso.name
   end
 end
