@@ -13,7 +13,8 @@
 # puts "Creating all"
 # require 'csv'
 
-# path = "/home/bruno/code/guifl2001/InVest/db/universidade_cursos_updated.csv"
+path = "db/universidade_cursos_updated.csv"
+CSV.read(path)
 
 # # Seed para cadastrar todas as Faculdade sem repetidas
 # CSV.foreach(path) do |row|
