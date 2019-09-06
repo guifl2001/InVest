@@ -1,16 +1,86 @@
-<div class="footer">
-  <div class="footer-links-words">
-    <a href="#">Políticas de privacidades</a>
-    <a href="#">Contato</a>
-  </div>
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-  </div>
+<footer>
+    <div class="container">
+        <div class="row justify-content-center">
 
-  <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Me
-  </div>
-</div>
+            <div class="col-md-4 col-12 mb-2">
+                <div class="footer-box-1">
+                    <div class="footer_header">
+                        <div class="footer_logo">
+                            <%= image_tag "logo-white.png" %>
+                        </div>
+                    </div>
+                    <div class="footer_box_body">
+                      <div class="footer_social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 mb-2">
+              <div class="footer_header">
+                  <h4 class="footer_title">
+                      instagram
+                  </h4>
+              </div>
+              <div class="footer_box_body">
+                  <ul class="instagram_list">
+                      <li>
+                          <a href="#">
+                              <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=755&q=80" alt="instagram">
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#">
+                              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="instagram">
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#">
+                              <img src="https://images.unsplash.com/photo-1460518451285-97b6aa326961?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="instagram">
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#">
+                              <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="instagram">
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#">
+                              <img src="https://images.unsplash.com/photo-1519664993241-d7c8f0ae7b39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="instagram">
+                          </a>
+                      </li>
+                      <li>
+                          <a href="#">
+                              <img src="https://images.unsplash.com/photo-1416677357736-79cd2bce22c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=780&q=80" alt="instagram">
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="footer-box-2">
+                  <div class="footer_header">
+                      <h4 class="footer_title">
+                          receba nossa newsletter
+                      </h4>
+                  </div>
+                  <div class="footer-box-body">
+                      <div class="newsletter_form">
+                          <input type="email" class="form-control" placeholder="E-Mail here">
+                          <button class="button">Inscreva-se</button>
+                      </div>
+                      <div class="footer_menu">
+                        <%= link_to "Home", root_path %>
+                        <a href="#">Contato</a>
+                        <a href="#">Política de Privacidade</a>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

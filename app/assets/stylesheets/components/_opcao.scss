@@ -1,63 +1,217 @@
-.position {
-  display:flex;
-  justify-content:flex-start;
+:root {
+  --var-padding: 1em;
+  --highlight: hsl(230, 38%, 46%);
+  --highlight-dark: hsl(230, 38%, 36%);
+  --logo-width: 6em;
+  --logo-offset: 1em;
+  --main-column-width: 25em;
 }
 
-.margin-b {
-  margin-bottom: 2%;
-}
-
-.m-b {
-  margin-bottom: 8%
-}
-
-.margin {
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-}
-
-.rola {
-  background-color: white;
-  max-height: 100%;
-  padding: 5%;
-}
-
-.text-description {
-  display:flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-.white-bg{
-  background:#ffffff !important;
-}
-
-.foto {
-  padding: 3%;
-}
-
-.text-align {
-  text-align:center
-}
-
-.img_resp {
-  width: 100%;
-  height: 100%;
-}
-
-.product-img {
-  width: 100%;
-  height: 55vh;
-  object-fit: cover;
-}
-
-.card-body {
-  text-align: center;
-  padding: 5%;
-  .card-text {
-    font-weight: lighter;
-    font-style: italic;
-    font-size: 15px;
-    text-align: left;
+* {
+  box-sizing: border-box;
+  &::before,
+  &::after {
+    border-box: inherit;
   }
+}
+
+.app {
+  position: relative;
+  padding-left: .5em;
+  max-width: 60em;
+  background: $primary-color 100% linear-gradient( $primary-color 0%, $primary-color 50%, $primary-color 50%, $white-color 100%);
+  background-size: auto 10em ;
+  background-repeat: repeat-x;
+  background-position: center top;
+}
+
+
+nav {
+  display: flex;
+  padding: 1.5em var(--var-padding);
+  grid-row: 1;
+  grid-column: 1;
+  background: #fff;
+
+  a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #333;
+  }
+
+  a + a {
+    margin-left: 2em;
+  }
+
+  a:hover,
+  a:focus {
+    border-color: var(--highlight);
+    border-width: 2px;
+  }
+
+  a[aria-current] {
+    border-bottom: 2px solid var(--highlight);
+  }
+}
+
+main {
+  padding: var(--var-padding);
+  grid-row: 2;
+  grid-column: 1;
+  background: #fff;
+
+  h1 {
+    margin-top: 0;
+    font-weight: normal;
+
+    span {
+      display: block;
+      color: var(--highlight);
+      font-weight: bolder;
+    }
+
+    sub {
+      font-size: .5em;
+    }
+  }
+
+  a {
+    color: var(--highlight);
+    text-decoration: none;
+
+    &::after {
+      margin-left: 1.5em;
+      content: '→';
+      vertical-align: baseline;
+    }
+
+    &:hover,
+    &:focus {
+      color: var(--highlight-dark);
+    }
+
+    &:hover::after,
+    &:focus::after {
+      margin-left: 2em;
+    }
+  }
+}
+
+@media (min-width: 37.5em) {
+  :root {
+    --var-padding: 3em;
+  }
+
+  .app {
+    display: grid;
+    margin: 6em auto;
+    grid-template-rows: 5em auto;
+    grid-template-columns: 1.4fr 1fr;
+    padding-left: 2em;
+    background-size: auto;
+
+    &::after {
+      position: absolute;
+      right: 1em;
+      left: 1em;
+      bottom: 0;
+      z-index: -1;
+      width: 95%;
+      height: 200px;
+      content: '';
+      box-shadow: 0 0 5em hsl(22, 23%, 40%);
+    }
+  }
+
+
+  nav {
+    justify-content: space-between;
+  }
+
+  main {
+    min-width: var(--main-column-width);
+  }
+}
+
+.cardin {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  &:hover {
+    .cardin__image {
+      filter: contrast(100%);
+    }
+  }
+}
+
+.cardin__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.cardin__image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  filter: contrast(70%);
+  //filter: saturate(180%);
+  overflow: hidden;
+  position: relative;
+  transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);;
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%; // 16:9 aspect ratio
+  }
+  @media(min-width: 40rem) {
+    &::before {
+      padding-top: 66.6%; // 3:2 aspect ratio
+    }
+  }
+}
+
+.cardin__image--notas {
+  background-image: url();
+}
+
+.cardin__image--datas {
+  background-image: url(https://unsplash.it/800/600?image=59);
+}
+
+.cardin__image--infos {
+  background-image: url(https://unsplash.it/800/600?image=59);
+}
+
+.cardin__title {
+  color: gray;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.cardin__text {
+  margin-top: 5px;
+  flex: 1 1 auto;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.cards {
+  list-style-type: none;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.estrelin {
+  display: flex;
+  align-items: center;
 }
