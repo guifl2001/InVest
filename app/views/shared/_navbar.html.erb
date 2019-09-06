@@ -10,16 +10,19 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to "Cursos", opcaos_path, class: "nav-link" %>
+        </li>
         <li class="nav-item active">
           <%= link_to "Faculdades", faculdades_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Cursos", cursos_path, class: "nav-link" %>
+          <%= link_to "Carreiras", cursos_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Users", users_path, class: "nav-link" %>
         </li>
+      <% if user_signed_in? %>
         <li class="nav-item dropdown dropdown-left">
           <% if current_user.photo.present? %>
           <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", style: 'height:50px ;width:50px;', id: "navbarDropdown",   data: { toggle: "dropdown"}, 'aria-haspopup': true, 'aria-expanded': false %>
