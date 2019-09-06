@@ -95,7 +95,9 @@
                             <p class="description-facu">
                               <% count = 0 %>
                               <% @faculdade.cursos.first(8).each do |curso| %>
-                                <%= curso.name %>;
+                                <%= link_to(curso) do %>
+                                  <%= curso.name %>;
+                                <% end %>
                               <% end %>
                             </p>
                         </div>
