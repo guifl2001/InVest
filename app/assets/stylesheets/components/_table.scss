@@ -9,13 +9,12 @@ $color-form-highlight: #EEEEEE;
 }
 
 .container-index {
-  max-width: 1000px;
   margin-right:auto;
   margin-left:auto;
   display:flex;
   justify-content:center;
   align-items:center;
-  min-height:100vh;
+  width: 60%;
 }
 
 .table {
@@ -79,10 +78,6 @@ $color-form-highlight: #EEEEEE;
     content: '(asc)';
   }
 
-}
-
-.main-content {
-  min-height: 1000px; // just for this pen
 }
 
 .hero {
@@ -158,10 +153,10 @@ $color-form-highlight: #EEEEEE;
 }
 
 .main-content {
+  display: flex;
   height: auto;
   padding: 30px 50px;
   position: relative;
-  width: 60%;
 }
 
 .main-content p {
@@ -218,4 +213,8 @@ $color-form-highlight: #EEEEEE;
 
 .delay-800 {
   animation-delay: 0.8s;
+}
+
+.text {
+  width: 40%;
 }
