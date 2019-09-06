@@ -34,6 +34,12 @@
         </div>
       <% end %>
         </div>
+        <%= form_tag opcaos_path, method: :get do %>
+          <%= text_field_tag :opçao, @redirect, class: "form-control query d-none"%>
+          <%= button_tag type: 'submit', class: "button-opc btn btn-primary w-100" do %>
+            <span class="my-0"> Ver mais </span></i>
+          <% end %>
+        <% end %>
       </div>
     </div>
 </section>
