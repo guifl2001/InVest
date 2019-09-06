@@ -11,7 +11,7 @@ class UserOpcaosController < ApplicationController
     @user_opcao.opcao = @opcao
     @user_opcao.user = current_user
     @user_opcao.save
-    redirect_to root_pat
+    redirect_to root_path
   end
 
   def destroy
