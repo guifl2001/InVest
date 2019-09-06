@@ -13,7 +13,9 @@ User.create(email: "edu@estudante.com", password: "estudante")
 puts "Creating all"
 require 'csv'
 
+
 path = 'db/universidade_cursos_updated.csv'
+
 
 # Seed para cadastrar todas as Faculdade sem repetidas
 CSV.foreach(path) do |row|
