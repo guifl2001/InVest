@@ -12,6 +12,6 @@ class FaculdadesController < ApplicationController
   end
 
   def index
-    @faculdades = Faculdade.all
+    @faculdades = Faculdade.all.page(params[:page]).per(16)
   end
 end
