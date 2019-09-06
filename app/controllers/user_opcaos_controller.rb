@@ -6,12 +6,12 @@ class UserOpcaosController < ApplicationController
   end
 
   def create
-    @opcao = Opcao.find(params[:opcao_id])
+    @opcao = Opcao.find(params[:opcao])
     @user_opcao = UserOpcao.new
     @user_opcao.opcao = @opcao
     @user_opcao.user = current_user
     @user_opcao.save
-    redirect_to @user_opcao
+    redirect_to root_pat
   end
 
   def destroy

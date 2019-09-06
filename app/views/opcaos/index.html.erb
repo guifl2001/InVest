@@ -1,5 +1,4 @@
-<div class="filter margin-top">
-  <div class="test">
+<div class="search mt-5">
   <%= form_tag opcaos_path, method: :get do %>
 
     <%= text_field_tag :opçao,
@@ -19,13 +18,16 @@
     <% end %>
   <% end %>
   <%= link_to "Ver todas", opcaos_path, class: "curso-decoration bold" %>
-  </div>
 </div>
+
 
 <div class="container py-5">
   <div class="grids">
     <% @opcaos.each do |opcao| %>
       <div class="fac-card" data-aos="zoom-in">
+         <%= link_to user_opcaos_path(opcao: opcao), method: :post, class: "card-add-link" do %>
+          <i class="fas fa-heart"></i>
+         <% end %>
         <%= image_tag "https://images.unsplash.com/photo-1517423568366-8b83523034fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80" %>
         <%= link_to opcao_path(opcao), class: "faculdade" do %>
         <div class="text-area">
