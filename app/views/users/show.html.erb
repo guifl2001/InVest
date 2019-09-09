@@ -31,32 +31,15 @@
         <div class="container">
 
         <% if @user.user_opcaos.size > 3 %>
-          <div class="opcaos">
+          <div class="opcaos" id="opcaos">
             <% @user.user_opcaos.each_with_index do |user_opcao, index| %>
-
-
               <%= render 'card', user_opcao: user_opcao, card_index: index %>
             <% end %>
           </div>
         <% elsif @user.user_opcaos.size > 0 %>
 
-          <div class="opcs">
-            <% @user.user_opcaos.each do |user_opcao| %>
-              <div class="op-card">
-                <div class="op-card-body">
-                  <% if @user == current_user %>
-                    <%= link_to "+", user_opcao_path(user_opcao), method: :delete, remote: true, class: "card-remove-link" %>
-                  <% end %>
-                  <%= image_tag "https://images.unsplash.com/photo-1552515941-29d256554e11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=890&q=80" %>
-                  <%= link_to opcao_path(user_opcao.opcao) do %>
-                    <div class="text-area">
-                      <h2 class="college"><%= user_opcao.opcao.curso.name %></h2>
-                      <h6><%= user_opcao.opcao.faculdade.name %></h6>
-                    </div>
-                  <% end %>
-                </div>
-              </div>
-            <% end %>
+          <div class="opcs" id="opcs">
+            <%= render 'card_grid', user: @user %>
           </div>
         <% else %>
 
