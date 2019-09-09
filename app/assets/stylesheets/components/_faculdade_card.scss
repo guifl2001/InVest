@@ -1,11 +1,11 @@
 .fac-card {
   border-radius: 2px;
-  height: 35vh;
+  height: 37vh;
+  min-height: 300px;
   overflow: hidden;
   margin-top: 8px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.15);
   transition: 0.2s linear;
-  min-height: 200px;
   &:hover {
     border-bottom: 3px solid $primary-color;
     transform: translateY(-1px);

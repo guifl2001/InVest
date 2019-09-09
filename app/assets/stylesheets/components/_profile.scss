@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items:center;
-    height: 60vh;
+    height: 75vh;
     width: 100%;
     object-fit:cover;
     background-size: cover;
@@ -80,7 +80,7 @@
   display: flex;
   align-items: center;
   margin-top: 2%;
-  height: 45vh;
+  height: 50vh;
   .slick-list {
     height: 100%;
     padding: 30px 50px 0px !important;
@@ -113,7 +113,7 @@
 
 .op-card-body {
   border-radius: 5px;
-  height: 35vh;
+  height: 40vh;
   overflow: hidden;
   margin-top: 8px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.15);
@@ -155,7 +155,6 @@
 .card-remove-link {
   color: white;
   border-radius: 50%;
-  border: 1px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -167,6 +166,7 @@
   opacity: 0;
   transform: rotate(45deg);
   transition: 0.2s ease;
+  font-size: 40px;
 }
 
 .opcs {

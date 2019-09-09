@@ -1,7 +1,7 @@
 .search {
   display: flex;
   justify-content: center;
-  margin-top: 90px;
+  margin-top: 100px;
   form {
     width: 60%;
     display: flex;
@@ -34,6 +34,7 @@
       background-color:  $primary-color;
       color: white;
       margin-right: 15px;
+      transition: 0.3s ease;
       &:hover {
         box-shadow: 0 3px 8px 0 rgba(0,0,0,.17);
         background-color: #fa7a50;
@@ -48,6 +49,7 @@
       border-radius: 30px!important;
       background-color: white;
       color: $primary-color;
+      transition: 0.3s ease;
       &:hover {
         box-shadow: 0 3px 8px 0 rgba(0,0,0,.17);
       }
