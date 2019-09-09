@@ -8,6 +8,8 @@ initUpdateNavbarOnScroll();
 
 import { table } from '../components/table';
 table();
+import { updateMyCourses } from '../components/profile';
+updateMyCourses();
 
 import AOS from 'aos';
 AOS.init();
