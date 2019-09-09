@@ -23,7 +23,7 @@
   <div class="grids">
     <% @opcaos.each do |opcao| %>
       <div class="fac-card" data-aos="zoom-in">
-         <%= link_to user_opcaos_path(opcao: opcao), method: :post, class: "card-add-link", alt: "seguir curso" do %>
+         <%= link_to user_opcaos_path(opcao: opcao), method: :post, remote: true, class: "card-add-link", alt: "seguir curso" do %>
           <i class="fas fa-heart"></i>
          <% end %>
         <%= image_tag "https://images.unsplash.com/photo-1517423568366-8b83523034fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80" %>
