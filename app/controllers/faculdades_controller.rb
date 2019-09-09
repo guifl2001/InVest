@@ -8,8 +8,9 @@ class FaculdadesController < ApplicationController
     @markers = [{
       lat: @faculdade.latitude,
       lng: @faculdade.longitude,
+      center: 4,
       infoWindow: render_to_string(partial: "infowindow", locals: { faculdade: @faculdade }),
-      image_url: helpers.asset_url('https://www.strath.ac.uk/media/1newwebsite/clearing/university.png')
+      image_url: helpers.asset_url('http://images.clipartpanda.com/government-clipart-2000px-Government_icon.svg.png')
     }]
   end
 
