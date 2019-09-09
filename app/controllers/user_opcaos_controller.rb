@@ -16,7 +16,6 @@ class UserOpcaosController < ApplicationController
 
   def destroy
     @user_opcao.delete
-    redirect_to current_user
   end
 
   def set_user_opcao
