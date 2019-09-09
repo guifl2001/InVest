@@ -1,3 +1,24 @@
 .display {
   display: none
 }
+
+.orange-btn {
+  background-color: $orange-bg;
+  border: none;
+  color: white;
+  padding: 1vh 5vh;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  opacity:0.90;
+  .btn {
+    color: white;
+  }
+}
+
+.orange-btn:hover {
+  opacity: 1;
+  color: white;
+  }

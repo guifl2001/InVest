@@ -2,6 +2,7 @@ class FaculdadesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[show index]
   def show
     @faculdade = Faculdade.find(params[:id])
+    @review = Review.new
   end
 
   def index

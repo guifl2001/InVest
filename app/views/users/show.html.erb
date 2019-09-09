@@ -29,26 +29,17 @@
         <p class="description px-5">An artist of considerable range, Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.</p>
         <h4 class="title text-center">Meus Cursos</h4>
         <div class="container">
+
         <% if @user.user_opcaos.size > 3 %>
           <div class="opcaos">
-            <%= @user.user_opcaos.each do |user_opcao| %>
-              <div class="op-card">
-                <div class="op-card-body">
-                  <% if @user == current_user %>
-                    <%= link_to "+", user_opcao_path(user_opcao), method: :delete, remote: true, data: { confirm: "Are you sure?" }, class: "card-remove-link" %>
-                  <% end %>
-                  <%= image_tag "https://images.unsplash.com/photo-1552515941-29d256554e11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=890&q=80" %>
-                  <%= link_to opcao_path(user_opcao.opcao) do %>
-                    <div class="text-area">
-                      <h2 class="college"><%= user_opcao.opcao.curso.name %></h2>
-                      <h6><%= user_opcao.opcao.faculdade.name %></h6>
-                    </div>
-                  <% end %>
-                </div>
-              </div>
+            <% @user.user_opcaos.each_with_index do |user_opcao, index| %>
+
+
+              <%= render 'card', user_opcao: user_opcao, card_index: index %>
             <% end %>
           </div>
         <% elsif @user.user_opcaos.size > 0 %>
+
           <div class="opcs">
             <% @user.user_opcaos.each do |user_opcao| %>
               <div class="op-card">
@@ -68,6 +59,8 @@
             <% end %>
           </div>
         <% else %>
+
+
           <div class="no-choice">
             <h4>Você ainda não escolheu nenhum curso.</h4>
           </div>

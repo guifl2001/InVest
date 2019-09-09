@@ -1,4 +1,5 @@
 class Faculdade < ApplicationRecord
+  has_many :reviews, dependent: :destroy
   has_many :opcaos
   has_many :cursos, through: :opcaos
   geocoded_by :location

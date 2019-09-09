@@ -106,29 +106,19 @@
         </div>
 
         <div class="container comments">
-          <h1>Add a comment</h1>
-          <h2>You are logged in as <a href="#">Dennis</a></h2>
-
-          <div class="comment">
-            <h3>Posted by <a href="#">Dennis</a>, three days ago:</h3>
-            <p>Estudei e recomendo.</p>
+          <div id="reviews">
+            <% @faculdade.reviews.each do |review| %>
+              <div class="comment">
+                <h3>Posted by <a href="#">Dennis</a>, three days ago:</h3>
+                <p><%= render 'reviews/show', review: review %></p>
+              </div>
+            <% end %>
           </div>
-
-          <div class="comment">
-            <h3>Posted by <a href="#">Joao</a>, 3 weeks ago:</h3>
-            <p>So mina feia.</p>
-          </div>
-
           <div class="comment-submit">
-
-            <form>
               <label>
                 <h2>Say it like you mean it:</h2>
-                <textarea class="long"></textarea>
+                <%= render 'reviews/form', faculdade: @faculdade, review: @review %>
               </label>
-
-              <button class="button-submit">Say it like you mean it</button>
-            </form>
           </div>
         </div>
 
