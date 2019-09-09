@@ -1,3 +1,5 @@
+window.$ = $;
+
 import "bootstrap";
 import AOS from 'aos';
 

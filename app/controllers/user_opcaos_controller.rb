@@ -15,7 +15,7 @@ class UserOpcaosController < ApplicationController
   end
 
   def destroy
-    @user_opcao.delete
+    @user_opcao.destroy
   end
 
   def set_user_opcao
