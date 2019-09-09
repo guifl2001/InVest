@@ -5,22 +5,42 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active banner" style="background-image: linear-gradient(0deg,rgba(44,44,44,.2),rgba(224,23,3,.6)), url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');">
-        <div class="carousel-caption d-none d-md-block">
-          <h2><span id="banner-typed-text"></span></h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex cumque similique atque earum totam illo reiciendis dolore veniam, quibusdam consectetur suscipit amet magnam aliquam cum vero sint mollitia! Sint, ex.</p>
+      <div id="firt" class="carousel-item banner active" style="background-image: linear-gradient(0deg,rgba(44,44,44,.2),rgba(224,23,3,.6)), url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');">
+        <div class="banner-container animated fadeInUp">
+          <h2 class="cover-title animated fadeInUp">
+            Descubra seu
+          </h2>
+          <strong class="cover-xl-text animated fadeInUp">Curso</strong>
+          <p class="cover-date animated fadeInUp">
+            saiba quais são os mais bem avaliados
+          </p>
+            </p>
+            <%= link_to "Veja mais", opcaos_path, class: "button-ocp animated fadeInUp" %>
         </div>
       </div>
       <div class="carousel-item banner" style="background-image: linear-gradient(0deg,rgba(44,44,44,.2),rgba(224,23,3,.6)), url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');">
-        <div class="carousel-caption d-none d-md-block">
-          <h2>Title</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex cumque similique atque earum totam illo reiciendis dolore veniam, quibusdam consectetur suscipit amet magnam aliquam cum vero sint mollitia! Sint, ex.</p>
+        <div class="banner-container animated fadeInUp">
+            <h2 class="cover-title animated fadeInUp">
+              Escolha a sua
+            </h2>
+            <strong class="cover-xl-text animated fadeInUp">Faculdade</strong>
+            <p class="cover-date animated fadeInUp">
+                veja as opniões de outros alunos
+            </p>
+            </p>
+            <%= link_to "Veja mais", faculdades_path, class: "button-ocp animated fadeInUp" %>
         </div>
       </div>
       <div class="carousel-item banner" style="background-image: linear-gradient(0deg,rgba(44,44,44,.2),rgba(224,23,3,.6)), url('https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png');">
-        <div class="carousel-caption d-none d-md-block">
-          <h2>Title</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex cumque similique atque earum totam illo reiciendis dolore veniam, quibusdam consectetur suscipit amet magnam aliquam cum vero sint mollitia! Sint, ex.</p>
+        <div class="banner-container animated fadeInUp">
+            <h2 class="cover-title animated fadeInUp">
+              Conheça as novas
+            </h2>
+            <strong class="cover-xl-text fadeInUp animated fadeInUp">Carreiras</strong>
+            <p class="cover-date animated fadeInUp">
+                descubra um mundo novo
+            </p>
+            <%= link_to "Veja mais", cursos_path, class: "button-ocp animated fadeInUp" %>
         </div>
       </div>
     </div>
@@ -29,7 +49,7 @@
 <div class="container">
   <div class="about">
     <h2>About</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus corrupti, vero fugit hic officiis et optio sint nobis nesciunt porro numquam totam doloremque voluptas officia, maxime temporibus, non sunt.</p>
+    <p data-aos="fade-up">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus corrupti, vero fugit hic officiis et optio sint nobis nesciunt porro numquam totam doloremque voluptas officia, maxime temporibus, non sunt.</p>
   </div>
   <hr>
   <%= link_to cursos_path, class: "none-dec" do %>
