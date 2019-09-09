@@ -3,6 +3,14 @@ class FaculdadesController < ApplicationController
   def show
     @faculdade = Faculdade.find(params[:id])
     @review = Review.new
+    @faculs = Faculdade.geocoded
+
+    @markers = [{
+      lat: @faculdade.latitude,
+      lng: @faculdade.longitude,
+      infoWindow: render_to_string(partial: "infowindow", locals: { faculdade: @faculdade }),
+      image_url: helpers.asset_url('https://www.strath.ac.uk/media/1newwebsite/clearing/university.png')
+    }]
   end
 
   def index
@@ -16,15 +24,6 @@ class FaculdadesController < ApplicationController
       end
     else
       @faculdades
-    end
-    @faculs = Faculdade.geocoded
-
-    @markers = @faculs.map do |faculdade|
-      {
-        lat: faculdade.latitude,
-        lng: faculdade.longitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { faculdade: faculdade })
-      }
     end
   end
 end

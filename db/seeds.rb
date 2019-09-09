@@ -12,7 +12,7 @@ User.create(email: "edu@estudante.com", password: "estudante")
 
 puts "Creating all"
 require 'csv'
-# endereco = "db/updated_endereco.csv"
+endereco = "db/updated_endereco.csv"
 
 path = 'db/universidade_cursos_updated.csv'
 
@@ -79,10 +79,10 @@ CSV.foreach(path) do |row|
   end
 end
 
-# CSV.foreach(endereco) do |row|
-#   f = Faculdade.find_by("sigla ILIKE ?", row[1])
-#   if f
-#     p f.location = row[2]
-#     f.save
-#   end
-#   end
+CSV.foreach(endereco) do |row|
+  f = Faculdade.find_by("sigla ILIKE ?", row[1])
+  if f
+    p f.location = row[2]
+    f.save
+  end
+end
