@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   end
 
   #faculdade
-  resources :faculdades, only: %i[show index]
+  resources :faculdades, only: %i[show index] do
+    resources :reviews, only: :create
+  end
 
   #curso
   resources :cursos, only: %i[show index]
