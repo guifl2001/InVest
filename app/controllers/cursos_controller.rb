@@ -1,4 +1,5 @@
 class CursosController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[show index]
   def index
     if params[:curso].present?
       @cursos = Curso.where("name ILIKE ?", "%#{params[:curso]}%").page(params[:page]).per(16)
