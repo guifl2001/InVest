@@ -5,7 +5,8 @@ import { loadDynamicBannerText } from '../components/banner';
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
-
+import { addLikes } from '../components/likes';
+addLikes();
 import { table } from '../components/table';
 table();
 import { updateMyCourses } from '../components/profile';
