@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 ruby '2.6.3'
 
 gem 'kaminari'
-gem "typedjs-rails", "~> 2.0.9"
-gem "jquery-slick-rails"
-gem "select2-rails"
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary', '~> 1.9.1'
 gem 'bootsnap', require: false
