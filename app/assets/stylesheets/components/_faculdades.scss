@@ -207,18 +207,24 @@
 }
 
 .description-facu {
-  width: 263px;
-  font-size: 16px;
-  color: #777777;
-  a {
-    text-decoration: none;
+  li {
     color: #777777;
+    a {
+      color: #777777;
+    }
   }
+  list-style: none;
 }
 
 .description-facu {
   a:hover {
-    color: #2c2c2c;
+    text-decoration: none;
+  }
+}
+
+.description-facu {
+  li:hover {
+    color: black;
   }
 }
 
@@ -282,3 +288,16 @@
     border-color: white;
   }
 }
+
+.title-area {
+  h2 {
+    margin-bottom: 3vh;
+  }
+  p {
+    border-top: 1px solid;
+    border-color: rgba(249,99,50,0.45);
+    padding-top: 3vh;
+  }
+}
+
+
