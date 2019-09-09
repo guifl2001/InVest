@@ -1,5 +1,19 @@
+<div class="search">
+  <%= form_tag faculdades_path, method: :get do %>
 
-<div class="container my-5 py-5">
+    <%= text_field_tag :faculdade,
+    params[:faculdade],
+    class: "form-control query" ,
+    placeholder: "Busca uma faculdade"%>
+
+    <%= button_tag type: 'submit', class: "button-opc" do %>
+      <span class="my-0"> Buscar </span></i>
+    <% end %>
+    <%= link_to "Ver todas", faculdades_path, class: "button-ocp" %>
+  <% end %>
+</div>
+
+<div class="container py-5">
   <div class="grids">
     <% @faculdades.each do |faculdade| %>
         <div class="fac-card" data-aos="zoom-in">
