@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
     @faculdade = Faculdade.find(params[:faculdade_id])
     @review = Review.new(review_params)
     @review.faculdade = @faculdade
+    @review.user = current_user
     if @review.save
       respond_to do |format|
         format.html { redirect_to faculdade_path(@faculdade) }
