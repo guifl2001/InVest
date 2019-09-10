@@ -13,7 +13,7 @@
       <div class="tabset">
         <!-- Tab 1 -->
         <input type="radio" name="tabset" id="tab1" aria-controls="marzen" checked>
-        <label for="tab1" style="margin-left: ;">
+        <label for="tab1" style="margin-left: 1vh;">
           <i class="fa fa-graduation-cap"></i><h2>Infos</h2>
         </label>
             <!-- Tab 2 -->
@@ -40,15 +40,16 @@
             <p><strong>Tipo de instituição:</strong> Privada</p>
           </section>
           <section id="rauchbier" class="tab-panel">
-            <h2>Localizaçao</h2>
+            <h2>Localização</h2>
             <div
               id="map"
               style="width: 100%;
-                  width: 349px;
-                  height: 361px;"
+                  width: 50vh;
+                  height: 50vh;"
               data-markers="<%= @markers.to_json %>"
               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
             ></div>
+
           </section>
           <section id="dunkles" class="tab-panel">
             <h2>A mais</h2>
@@ -75,7 +76,6 @@
                 <div class="row">
                     <div class="title-area">
                         <h2><%= @faculdade.sigla %></h2>
-                        <div class="separator separator-danger">---✻---</div>
                         <p class="description">We promise you a new look and more importantly, a new attitude. We build that by getting to know you, your needs and creating the best looking clothes.</p>
                     </div>
                 </div>
@@ -85,21 +85,20 @@
                             <i class="fa fa-magic"></i>
                             <h3>Ideia</h3>
                             <p class="description">Visão
-                              “Pensar a Educação como uma forma de desenvolvimento e valorização e tranformação do indivíduo e a sua inserção no mundo do trabalho e na sociedade.</p>
+                              “Pensar a Educação como uma forma de desenvolvimento e valorização e tranformação do indivíduo e a sua inserção no mundo do trabalho e na sociedade."</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="info-icon">
                             <i class="fa fa-fire"></i>
-                            <h3>Cursos pop</h3>
-                            <p class="description-facu">
-                              <% count = 0 %>
-                              <% @faculdade.cursos.first(8).each do |curso| %>
-                                <%= link_to(curso) do %>
-                                  <%= curso.name %>;
+                            <h3 style="margin-left: 3vh">Hot cursos</h3>
+                            <ul class="description-facu">
+                                <% @faculdade.cursos.first(8).each do |curso| %>
+                                  <%= link_to(curso) do %>
+                                    <li><%= curso.name %></li>
+                                  <% end %>
                                 <% end %>
-                              <% end %>
-                            </p>
+                            </ul>
                         </div>
                     </div>
 

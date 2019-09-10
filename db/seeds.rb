@@ -10,6 +10,7 @@
 # User.create(email: "edu@estudante.com", password: "estudante")
 
 
+
 # puts "Creating all"
 # require 'csv'
 regex = /(?<name>(.+))[(\[\]](?<sigla>(.+))[)\[\]]/
@@ -115,5 +116,4 @@ CSV.foreach(endereco) do |row|
     p f.location = row[2]
     f.save
   end
-  end
-
+end

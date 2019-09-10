@@ -1,2 +1,21 @@
 var index = $('div[data-user-opcao="' + <%= @user_opcao.id %> + '"]').data('index');
 $('.opcaos').slick('slickRemove',index);
+
+
+function refreshOpcs(innerHTML) {
+  var newReviewForm = document.getElementById('opcs');
+  if (newReviewForm === null) {
+    newReviewForm = document.getElementById('opcaos');
+    newReviewForm.className = "";
+    newReviewForm.classList.add('opcs')
+  }
+  newReviewForm.innerHTML = innerHTML;
+}
+
+var cards = document.querySelectorAll('.card-remove-link');
+if (cards.length <= 3) {
+  console.log('oi');
+  refreshOpcs('<%= j render "users/card_grid", user: @user %>');
+}
+
+

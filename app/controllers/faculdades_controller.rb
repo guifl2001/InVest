@@ -5,12 +5,13 @@ class FaculdadesController < ApplicationController
     @review = Review.new
     @faculs = Faculdade.geocoded
 
-    @markers = @faculs.map do |faculdade|
-      {
-        lat: faculdade.latitude,
-        lng: faculdade.longitude
-      }
-    end
+    @markers = [{
+      lat: @faculdade.latitude,
+      lng: @faculdade.longitude,
+      center: 4,
+      infoWindow: render_to_string(partial: "infowindow", locals: { faculdade: @faculdade }),
+      image_url: helpers.asset_url('http://images.clipartpanda.com/government-clipart-2000px-Government_icon.svg.png')
+    }]
   end
 
   def index

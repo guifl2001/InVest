@@ -26,10 +26,16 @@
                         hint: "We need your current password to confirm your changes",
                         required: true,
                         input_html: { autocomplete: "current-password" } %>
-            <%= f.input :photo %>
+            <%= f.input :photo,
+                        input_html: { class: 'd-none', id: 'photo-input' },
+                        label_html: { class: 'upload-photo'},
+                        label: '📷 Upload a photo' %>
+            <%= image_tag "",
+                          width: 150,
+                          height: 150,
+                          class: "d-none preview-avatar",
+                          id: "photo-preview" %>
           </div>
-          <h3 class="mt-3">Cancel my account</h3>
-          <p> <%= link_to "Delete", registration_path(resource_name),class: "form-delete-btn" , data: { confirm: "Are you sure?" }, method: :delete %></p>
       </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12">
@@ -62,6 +68,13 @@
           <div class="form-submit-btn">
             <%= f.button :submit, "Update" %>
           </div>
+          <p class="mt-3">Cancel my account</p>
+          <p> <%= link_to "Delete",
+                  registration_path(resource_name),
+                  class: "form-delete-btn" ,
+                   data: { confirm: "Are you sure?" },
+                    method: :delete %>
+          </p>
         <% end %>
       </div>
     </div>
