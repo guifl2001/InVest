@@ -7,7 +7,7 @@
             <% if current_user.is_following?(user.id) %>
               <%= link_to "+", unfollow_user_path(user.id), method: :post, remote: true, class: "card-remove-link", data: {user: "#{user.id}"} %>
             <% else %>
-              <%= link_to follow_user_path(user.id), method: :post, remote: true, class: "card-add-link" do %>
+              <%= link_to follow_user_path(user.id), method: :post, remote: true, class: "card-add-link", data: {user: "#{user.id}"} do %>
                 <i class="fas fa-heart"></i>
               <% end %>
             <% end %>
