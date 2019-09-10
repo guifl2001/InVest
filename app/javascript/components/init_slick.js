@@ -4,7 +4,7 @@ import 'slick-carousel';
 
 
 const initSlick = () => {
-
+  console.log('oi')
   // slider logo home page
   $('.slider').slick({
     centerMode: true,
