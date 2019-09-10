@@ -11,7 +11,7 @@ import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { addLikes } from '../components/likes';
 import { table } from '../components/table';
 import { initSlick } from '../components/init_slick';
-
+import { previewImageOnFileSelect } from '../components/photo_preview';
 
 AOS.init();
 initUpdateNavbarOnScroll();
@@ -19,7 +19,7 @@ addLikes();
 table();
 initMapbox();
 initSlick();
-
+previewImageOnFileSelect();
 
 
 
