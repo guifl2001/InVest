@@ -48,6 +48,12 @@
             <h4>Você ainda não escolheu nenhum curso.</h4>
           </div>
         <% end %>
+
+        <div>
+          <%= month_calendar start_date_param: :my_date do |date| %>
+            <%= date.day %>
+          <% end %>
+        </div>
         </div>
       </div>
     </div>
