@@ -16,13 +16,26 @@
             <a href="#button" class="btn btn-round" rel="tooltip" title="Follow me on Instagram">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="#button" class="btn btn-round" rel="tooltip" title="Follow me on Instagram">
+            <a href="#button" class="btn btn-round" rel="tooltip" title="Follow me on Facebook">
               <i class="fab fa-facebook"></i>
             </a>
+
+            <a href="#button" class="btn btn-round" rel="tooltip" title="See calendar" data-toggle="modal" data-target="#exampleModal">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+            </a>
+
           </div>
         </div>
       </div>
     </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="calendar-div">
+            <div id="calendar"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        </div>
     <div class="section my-5">
       <div class="profile-container">
         <h3 class="title">Sobre mim</h3>
@@ -49,7 +62,6 @@
           </div>
         <% end %>
 
-        <div id="calendar">
         </div>
         </div>
       </div>

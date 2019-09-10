@@ -4,4 +4,11 @@
 //= require fullcalendar
 //= require fullcalendar/locale-all
 
-$('#calendar').fullCalendar({});
+$('#calendar').fullCalendar({
+  header: {
+    left: 'prev,next ',
+    center: 'title',
+    right: 'today'
+  },
+  locale: 'pt-br'
+});
