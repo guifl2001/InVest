@@ -14,6 +14,7 @@ import { initSlick } from '../components/init_slick';
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { initStarRating } from '../plugins/init_star_rating';
 
+
 AOS.init();
 initUpdateNavbarOnScroll();
 addLikes();
