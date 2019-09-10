@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates_integrity_of  :photo
   validates_processing_of :photo
 
+  has_many :user
   has_many :user_opcaos
   has_many :opcaos, through: :user_opcaos
   has_many :faculdades, through: :opcaos

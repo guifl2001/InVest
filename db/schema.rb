@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_124021) do
+ActiveRecord::Schema.define(version: 2019_09_10_174120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,7 +69,9 @@ ActiveRecord::Schema.define(version: 2019_09_10_124021) do
     t.bigint "faculdade_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["faculdade_id"], name: "index_reviews_on_faculdade_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "user_opcaos", force: :cascade do |t|
@@ -104,6 +106,7 @@ ActiveRecord::Schema.define(version: 2019_09_10_124021) do
   add_foreign_key "opcaos", "cursos"
   add_foreign_key "opcaos", "faculdades"
   add_foreign_key "reviews", "faculdades"
+  add_foreign_key "reviews", "users"
   add_foreign_key "user_opcaos", "opcaos"
   add_foreign_key "user_opcaos", "users"
 end

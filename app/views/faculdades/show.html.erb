@@ -110,7 +110,7 @@
           <div id="reviews">
             <% @faculdade.reviews.each do |review| %>
               <div class="comment">
-                <h3>Posted by <a href="#">Dennis</a>, three days ago:</h3>
+                <h3>Posted by <%= link_to review.user.email, user_path(review.user) %>, three days ago:</h3>
                 <p><%= render 'reviews/show', review: review %></p>
               </div>
             <% end %>
