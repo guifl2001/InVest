@@ -1,0 +1,28 @@
+<% @user.following.each_with_index do |user, index| %>
+   <div class="user-card">
+    <div class="bg-img">
+      <% if user.photo.present? %>
+        <%= cl_image_tag user.photo, class: "avatar user-img", style: 'height:100px ;width:100px;object-fit:cover' %>
+      <% else %>
+        <%= image_tag "user.png", class: "avatar user-img", style: 'height:100px ;width:100px;object-fit:cover' %>
+      <% end %>
+    </div>
+    <div class="user-text">
+      <%= link_to user_path(user) do %>
+      <p class="title"><%= "#{user.first_name} #{user.last_name}" %></p>
+      <p class="email"><%=  user.email %></p>
+      <% end %>
+      <div class="button-container-card">
+        <a href="#button" class="btn btn-round" rel="tooltip" title="Follow me on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#button" class="btn btn-round" rel="tooltip" title="Follow me on Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#button" class="btn btn-round" rel="tooltip" title="Follow me on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </div>
+    </div>
+   </div>
+<% end %>
