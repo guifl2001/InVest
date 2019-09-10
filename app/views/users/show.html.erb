@@ -8,7 +8,7 @@
             <%= image_tag "user.png", class: "avatar user-img", style: 'height:150px ;width:150px;object-fit:cover' %>
           <% end %>
           <h3 class="title"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
-          <p class="category">Photographer</p>
+          <p class="category">Estudante</p>
           <div class="button-container">
             <a href="#button" class="btn btn-round" rel="tooltip" title="Follow me on Twitter">
               <i class="fab fa-twitter"></i>
@@ -26,7 +26,11 @@
     <div class="section my-5">
       <div class="profile-container">
         <h3 class="title">Sobre mim</h3>
-        <p class="description px-5">An artist of considerable range, Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.</p>
+        <% if @user.infos %>
+          <p class="description px-5"><%= @user.infos %></p>
+        <% else %>
+          <p class="description px-5"> Descrição? Só quero passar no vestibular!</p>
+        <% end %>
         <h4 class="title text-center">Meus Cursos</h4>
         <div class="container">
 
