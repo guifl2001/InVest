@@ -121,11 +121,11 @@
   &:hover {
     border-bottom: 3px solid $primary-color;
     transform: translateY(-1px);
-    .card-remove-link {
-      color: white;
-      text-decoration: none;
-      opacity: 1;
-    }
+      .card-remove-link {
+        color: white;
+        text-decoration: none;
+        opacity: 1;
+      }
   }
   img {
     width: 100%;
