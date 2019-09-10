@@ -95,8 +95,11 @@
   display: flex;
   align-items: center;
   margin-top: 2%;
-  height: 50vh;
+  .slick-slider {
+    min-height: 380px;
+  }
   .slick-list {
+    min-height: 370px;
     height: 100%;
     padding: 30px 50px 0px !important;
   }
@@ -126,11 +129,13 @@
 .op-card {
   padding: 0 20px;
   height: 100%;
+  max-width: 350px;
 }
 
 .op-card-body {
   border-radius: 5px;
-  height: 40vh;
+  height: 35vh;
+  min-height: 280px;
   overflow: hidden;
   margin-top: 8px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.15);
@@ -147,6 +152,7 @@
   img {
     width: 100%;
     object-fit: cover;
+    max-height: 170px;
   }
   a {
     &:hover {
@@ -197,7 +203,7 @@
     height: 25vh;
   }
   .user-card {
-    min-width: 250px ;
+    min-width: 270px ;
   }
 }
 
