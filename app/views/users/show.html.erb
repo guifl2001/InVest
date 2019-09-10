@@ -33,11 +33,9 @@
             <a href="#button" class="btn btn-round" rel="tooltip" title="Follow me on Facebook">
               <i class="fab fa-facebook"></i>
             </a>
-
             <a href="#button" class="btn btn-round" rel="tooltip" title="See calendar" data-toggle="modal" data-target="#exampleModal">
               <i class="fa fa-calendar" aria-hidden="true"></i>
             </a>
-
           </div>
         </div>
       </div>
@@ -46,7 +44,7 @@
           <div class="calendar-div">
             <div id="calendar"></div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <%= link_to "Close", user_path(current_user), class: "btn btn-secondary" %>
           </div>
         </div>
         </div>
