@@ -4,7 +4,6 @@ import 'slick-carousel';
 
 
 const initSlick = () => {
-
   // slider logo home page
   $('.slider').slick({
     centerMode: true,
@@ -34,7 +33,7 @@ const initSlick = () => {
     pauseOnHover: true,
     responsive: [
       {
-        breakpoint: 800,
+        breakpoint: 1000,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1

@@ -2,6 +2,7 @@
 <div class="app" style="background-image: url('<%= image %>');">
   <main>
     <h1><%= @opcao.curso.name %> EM <%= @opcao.faculdade.name %></h1>
+    <h2><%= link_to "Seguir", user_opcaos_path(opcao: @opcao), method: :post, remote: true %></h2>
   </main>
 </div>
 <% notas = image_path('notas.jpg') %>
@@ -11,9 +12,10 @@
       <div class="cardin__image" style="background-image: url('<%= notas %>');"></div>
       <div class="cardin__content">
         <div class="cardin__title">As notas:</div>
-        <% if @opcao.cc == 0 %>
-          <p class="cardin__text">Conceito de Curso (CC): SEM NOTA </p>
-        <% else %>
+        <p class="cardin__text">Ranking da Folha(RUF): <%= @opcao.faculdade.ranking %>º</p>
+        <% if @opcao.enade == 0 && @opcao.cc == 0 %>
+          <p class="cardin__text">Conceito de Curso (CC): SEM NOTA</p>
+        <% elsif @opcao.enade == 0 %>
           <p class="cardin__text">Conceito de Curso (CC):
           <% @opcao.cc.times do %>
             <i class="fas fa-star"></i>
@@ -22,9 +24,6 @@
             <i class="far fa-star"></i>
           <% end %>
           </p>
-        <% end %>
-        <% if @opcao.enade == 0 %>
-          <p class="cardin__text">ENADE(MEC): SEM NOTA </p>
         <% else %>
           <p class="cardin__text">ENADE(MEC):
           <% @opcao.enade.times do %>
@@ -51,7 +50,7 @@
         </p>
         <% end %>
         <% if @opcao.data_prova.present? %>
-        <p class="cardin__text">Data de prova: <%= @opcao.data_inscricao %>
+        <p class="cardin__text">Data de prova: <%= @opcao.data_prova %>
         <% else %>
         <p class="cardin__text">Data de prova: 22/11/2019
         </p>

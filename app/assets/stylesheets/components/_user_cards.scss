@@ -1,17 +1,28 @@
 .user-card {
+  margin: 5px auto;
   background-color: #FFF;
   border-radius: 10px;
   box-shadow: 0px 0px 25px rgba(0,0,0,0.1);
   overflow: hidden;
   position: relative;
   max-width: 300px;
-  min-width: 150px;
-  min-height: 280px;
+  min-width: 250px;
+  min-height: 300px;
   transition: 0.5s ease;
   &:hover {
     text-decoration: none;
     .avatar {
       transform: rotateY(180deg);
+    }
+    .card-add-link {
+      font-size: 25px;
+      text-decoration: none;
+      opacity: 1;
+    }
+    .card-remove-link {
+      color: white;
+      text-decoration: none;
+      opacity: 1;
     }
   }
   .user-text {
@@ -69,30 +80,29 @@
     transition: 0.5s ease;
   }
 }
-
-  .button-container-card{
+.button-container-card{
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin-bottom: 5%;
+  .btn-round {
+    border-radius: 50%;
     display: flex;
-    justify-content: space-around;
-    width: 80%;
-    margin-bottom: 5%;
-    .btn-round {
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 3rem;
-      height: 3rem;
-      transition: 0.5s ease;
-      background-color: white;
-      &:hover {
-        background-color: $primary-color;;
-        i {
-          color: white;
-        }
-      }
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    transition: 0.5s ease;
+    background-color: white;
+    &:hover {
+      background-color: $primary-color;;
       i {
-        font-size: 1.5rem;
-        color: $primary-color;
+        color: white;
       }
     }
+    i {
+      font-size: 1.5rem;
+      color: $primary-color;
+    }
   }
+}

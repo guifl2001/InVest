@@ -1,2 +1,24 @@
-<p><%= review.content %></p>
-<p><%= review.rating %></p>
+<div class="comment">
+  <p>
+    <% if review.user.first_name.present? %>
+      Posted by <%= link_to review.user.first_name, user_path(review.user) %>, three days ago:
+      <% (review.rating.to_i).times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - review.rating.to_i).times do %>
+        <i class="far fa-star"></i>
+      <% end %>
+    <% else %>
+      Posted by <%= link_to review.user.email, user_path(review.user) %>, three days ago:
+      <% (review.rating.to_i).times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - review.rating.to_i).times do %>
+        <i class="far fa-star"></i>
+      <% end %>
+    <% end %>
+  </p>
+  <p><%= review.content %></p>
+
+
+</div>

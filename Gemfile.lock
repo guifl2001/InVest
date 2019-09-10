@@ -99,6 +99,8 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
+    jquery-slick-rails (1.9.0)
+      railties (>= 3.1)
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.1.1)
@@ -254,6 +256,7 @@ DEPENDENCIES
   fullcalendar-rails
   geocoder
   jbuilder (~> 2.0)
+  jquery-slick-rails
   kaminari
   listen (~> 3.0.5)
   momentjs-rails

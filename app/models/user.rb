@@ -8,10 +8,15 @@ class User < ApplicationRecord
   validates_integrity_of  :photo
   validates_processing_of :photo
 
+  has_many :user
   has_many :user_opcaos
   has_many :opcaos, through: :user_opcaos
   has_many :faculdades, through: :opcaos
   has_many :cursos, through: :opcaos
+
+  has_many :user_chats
+  has_many :chats, through: :user_chats
+  has_many :messages, through: :user_chats
 
   has_many :follower_relationships, foreign_key: :following_id, class_name: 'Follow'
   has_many :followers, through: :follower_relationships, source: :follower

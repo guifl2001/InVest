@@ -11,7 +11,9 @@
 
   <div class="text">
   <h2>Saiba mais sobre esse curso</h2>
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  <p>Busque por mais informações sobre esse curso em nosso fórum sobre <%= @curso.name.capitalize %>. Discuta com outras pessoas suas dúvidas, medos, felicidades e descubra mais sobre a carreira de sua escolha.</p>
+  <p>Não esqueça de procurar pelas melhores faculdades no ranking ao lado e não perder nenhuma informação enquanto se prepara para o tão esperado vestibular</p>
+  <p></p>
   </div>
 
   <div class="container-index">
@@ -20,26 +22,20 @@
 
       <div class="table-header">
         <div class="header__item"><p>Faculdades</p></div>
+        <div class="header__item"><p>Posição</p></div>
         <div class="header__item"><p>Notas</p></div>
-        <div class="header__item"><p>Estado</p></div>
         <div class="header__item"><p>Situação</p></div>
       </div>
 
-      <% @curso.faculdades.first(5).each do |f| %>
+      <% @curso.faculdades.order(:ranking).first(5).each do |f| %>
 
       <div class="table-content">
 
         <div class="table-row">
 
           <div class="table-data"><%= link_to f.sigla == "-" ? f.name : f.sigla, opcao_path(Opcao.where(curso_id: @curso, faculdade_id: f).first) %></div>
-          <% if f.opcaos.find_by(curso_id: @curso).enade != 0 %>
-          <div class="table-data"><%= f.opcaos.find_by(curso_id: @curso).enade %></div>
-          <% elsif f.opcaos.find_by(curso_id: @curso).cc != 0 %>
-          <div class="table-data"><%= f.opcaos.find_by(curso_id: @curso).cc %></div>
-          <% else %>
-          <div class="table-data">-</div>
-          <% end %>
-          <div class="table-data">SP</div>
+          <div class="table-data"><%= f.ranking %>º</div>
+          <div class="table-data"><%= f.nota %></div>
           <div class="table-data">Ativa</div>
         </div>
 
