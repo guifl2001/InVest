@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_174120) do
+ActiveRecord::Schema.define(version: 2019_09_10_202236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chats", force: :cascade do |t|
+    t.bigint "curso_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_chat_id"
+    t.index ["curso_id"], name: "index_chats_on_curso_id"
+    t.index ["user_chat_id"], name: "index_chats_on_user_chat_id"
+  end
 
   create_table "cursos", force: :cascade do |t|
     t.string "name"
@@ -42,6 +51,14 @@ ActiveRecord::Schema.define(version: 2019_09_10_174120) do
     t.index ["follower_id"], name: "index_follows_on_follower_id"
     t.index ["following_id", "follower_id"], name: "index_follows_on_following_id_and_follower_id", unique: true
     t.index ["following_id"], name: "index_follows_on_following_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.bigint "user_chat_id"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_chat_id"], name: "index_messages_on_user_chat_id"
   end
 
   create_table "opcaos", force: :cascade do |t|
@@ -74,6 +91,15 @@ ActiveRecord::Schema.define(version: 2019_09_10_174120) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "user_chats", force: :cascade do |t|
+    t.bigint "chat_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_id"], name: "index_user_chats_on_chat_id"
+    t.index ["user_id"], name: "index_user_chats_on_user_id"
+  end
+
   create_table "user_opcaos", force: :cascade do |t|
     t.bigint "opcao_id"
     t.bigint "user_id"
@@ -103,10 +129,15 @@ ActiveRecord::Schema.define(version: 2019_09_10_174120) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "chats", "cursos"
+  add_foreign_key "chats", "user_chats"
+  add_foreign_key "messages", "user_chats"
   add_foreign_key "opcaos", "cursos"
   add_foreign_key "opcaos", "faculdades"
   add_foreign_key "reviews", "faculdades"
   add_foreign_key "reviews", "users"
+  add_foreign_key "user_chats", "chats"
+  add_foreign_key "user_chats", "users"
   add_foreign_key "user_opcaos", "opcaos"
   add_foreign_key "user_opcaos", "users"
 end
