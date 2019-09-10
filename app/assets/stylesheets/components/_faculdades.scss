@@ -1,5 +1,5 @@
 .facu-container {
-  height: 273vh;
+  height: auto;
   background-image: white;
   h1,h2,h3 {
     font-family: Arial;
@@ -17,7 +17,7 @@
   background-color: white;
   padding: 3vh;
   margin-bottom: 4vh;
-  height: 188vh;
+  height: auto;
   font-weight:1vh;
   p {
     padding: 0.3vh;
@@ -274,12 +274,14 @@
 }
 
 .comments .comment {
-    padding: 1.5em;
-    border: 2px solid #E8E8E8;
-    margin-bottom: 1em;
-    border-radius: 5px;
-    /* box-shadow: 0 0 0; */
-    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  padding: 1vh;
+  border: 2px solid #E8E8E8;
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+  width: 71vh;
+  height: 19vh;
+  margin: auto;
+  margin-bottom: 2vh;
 }
 
 .comments form textarea {
@@ -300,7 +302,6 @@
 
 .comment-submit {
   button:hover {
-    opacity: 1;
     border: solid;
     border-color: white;
   }
@@ -317,4 +318,19 @@
   }
 }
 
+.review_rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.comment-submit [type="submit"]:not(:disabled) {
+  opacity: 0.85;
+  color: white;
+  padding: 2vh;
+  border-radius: 6vh;
+}
+
+.comment-submit [type="submit"]:not(:disabled):hover {
+  opacity: 1;
+}
