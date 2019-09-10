@@ -1,6 +1,15 @@
-function renderUser(userHTML) {
+function renderUser() {
   const user = document.querySelector("[data-user='<%= @user.id %>']");
-  user.innerHTML = userHTML;
+  if (user.className === "card-add-link") {
+    user.parentElement.insertAdjacentHTML("afterbegin", '<%= link_to "+", unfollow_user_path(@user.id), method: :post, remote: true, class: "card-remove-link", data: {user: "#{@user.id}"} %>');
+    user.remove();
+  }
+  if (user.className === "card-remove-link") {
+    user.parentElement.insertAdjacentHTML("afterbegin",'<%= link_to follow_user_path(@user.id), method: :post, remote: true, class: "card-add-link", data: {user: "#{@user.id}"} do %><i class="fas fa-heart"></i><% end %>');
+    user.remove();
+  }
 }
 
-renderUser('<%= link_to follow_user_path(@user.id), method: :post, remote: true, class: "card-add-link" do %><i class="fas fa-heart"></i><% end %>');
+if (window.location.pathname === "/users") {
+  renderUser();
+}
