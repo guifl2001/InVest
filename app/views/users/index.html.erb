@@ -3,6 +3,15 @@
     <% @users.each do |user| %>
        <div class="user-card">
         <div class="bg-img">
+          <% if user_signed_in? %>
+            <% if current_user.is_following?(user.id) %>
+              <%= link_to "+", unfollow_user_path(user.id), method: :post, remote: true, class: "card-remove-link", data: {user: "#{user.id}"} %>
+            <% else %>
+              <%= link_to follow_user_path(user.id), method: :post, remote: true, class: "card-add-link" do %>
+                <i class="fas fa-heart"></i>
+              <% end %>
+            <% end %>
+          <% end %>
           <% if user.photo.present? %>
             <%= cl_image_tag user.photo, class: "avatar user-img", style: 'height:100px ;width:100px;object-fit:cover' %>
           <% else %>
