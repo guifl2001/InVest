@@ -1,6 +1,6 @@
 <div class="comment">
   <p>
-    Edu :
+    Posted by <%= link_to review.user.first_name, user_path(review.user) %>, three days ago:
     <% (review.rating.to_i).times do %>
       <i class="fas fa-star"></i>
     <% end %>

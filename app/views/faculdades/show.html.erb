@@ -110,11 +110,14 @@
         <div class="container comments">
           <div id="reviews">
             <% @faculdade.reviews.each do |review| %>
-              <div class="comment">
-                <h3>Posted by <%= link_to review.user.email, user_path(review.user) %>, three days ago:</h3>
                 <p><%= render 'reviews/show', review: review %></p>
-              </div>
             <% end %>
+          </div>
+          <div class="comment-submit">
+            <label>
+              <h2>Say it like you mean it:</h2>
+              <%= render 'reviews/form', faculdade: @faculdade, review: @review %>
+            </label>
           </div>
         </div>
 
