@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
 gem "jquery-slick-rails"
 gem 'kaminari'
 gem 'carrierwave', '~> 1.2'
