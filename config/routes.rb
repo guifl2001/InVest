@@ -11,6 +11,11 @@ Rails.application.routes.draw do
     end
   end
 
+  #user_chat
+  resources :user_chats, only: :create  do
+      resources :messages, only: %i[create destroy]
+  end
+
   #faculdade
   resources :faculdades, only: %i[show index] do
     resources :reviews, only: :create
