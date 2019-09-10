@@ -33,7 +33,7 @@ const initSlick = () => {
     pauseOnHover: true,
     responsive: [
       {
-        breakpoint: 800,
+        breakpoint: 1000,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1
