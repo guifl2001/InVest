@@ -9,6 +9,20 @@
           <% end %>
           <h3 class="title"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
           <p class="category">Estudante</p>
+          <div class="follow">
+            <div class="followers">
+              <h3 class="title">
+                <%= @user.followers.count %>
+              </h3>
+              <p>Seguidores</p>
+            </div>
+            <div class="following">
+              <h3 class="title">
+                <%= @user.following.count %>
+              </h3>
+              <p>Seguindo</p>
+            </div>
+          </div>
           <div class="button-container">
             <a href="#button" class="btn btn-round" rel="tooltip" title="Follow me on Twitter">
               <i class="fab fa-twitter"></i>
@@ -46,14 +60,29 @@
             <%= render 'card_grid', user: @user %>
           </div>
         <% else %>
-
-
           <div class="no-choice">
             <h4>Você ainda não escolheu nenhum curso.</h4>
+          </div>
+        <% end %>
+        </div>
+        <h4 class="title text-center mt-5">Seguindo</h4>
+        <div class="container">
+
+        <% if @user.following.size > 3 %>
+          <div class="opcaos" id="opcaos">
+            <%= render 'user_card', user: @user %>
+          </div>
+        <% elsif @user.following.size > 0 %>
+          <div class="opcs">
+            <%= render 'user_card', user: @user %>
+          </div>
+        <% else %>
+          <div class="no-choice">
+            <h4>Você ainda não segue outro usuários.</h4>
           </div>
         <% end %>
         </div>
       </div>
     </div>
   </div>
-<!-- dsads -->
+
