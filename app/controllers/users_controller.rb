@@ -14,6 +14,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def options
+    render json: User.find(params[:id]).faculdades.pluck(:sigla)
+  end
+
   def follow
     if current_user.follow(@user.id)
       respond_to do |format|
