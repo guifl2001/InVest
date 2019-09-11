@@ -1,4 +1,8 @@
 class ReviewsController < ApplicationController
+  def new
+    @review = Review.new
+  end
+
   def create
     @faculdade = Faculdade.find(params[:faculdade_id])
     @review = Review.new(review_params)
@@ -6,13 +10,13 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     if @review.save
       respond_to do |format|
-        format.html { redirect_to faculdade_path(@faculdade) }
-        format.js  # <-- will render `app/views/reviews/create.js.erb`
+        format.html { redirect_to faculdade_path(@faculdade, anchor: "comment-container") }
+        format.js # <-- will render `app/views/reviews/create.js.erb`
       end
     else
       respond_to do |format|
         format.html { render 'faculdades/show' }
-        format.js  # <-- idem
+        format.js # <-- idem
       end
     end
   end
