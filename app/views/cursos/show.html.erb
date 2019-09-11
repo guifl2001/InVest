@@ -75,9 +75,9 @@
       <p class="no-messages">Seja o primeiro a mandar uma mensagem nesse forum</p>
     <% end %>
   </div>
-  <% if current_user.user_chats.where(chat:  @curso.id ).present?%>
+  <% if current_user.user_chats.where(chat: @curso.chat ).present?%>
     <div class="message-form">
-    <%= form_tag user_chat_messages_path(current_user.user_chats.where(chat:  @curso.id ).pluck(:id)), method: :post, remote: :true do %>
+    <%= form_tag user_chat_messages_path(current_user.user_chats.where(chat:  @curso.chat ).pluck(:id)), method: :post, remote: :true do %>
 
       <%= text_field_tag :content, params[:content],
       class: "form-control query",
