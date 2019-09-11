@@ -119,9 +119,23 @@
 #   end
 # end
 
-Curso.all.each do |curso|
-  chat = Chat.new
-  chat.curso = curso
-  chat.save
-  p chat
+# Curso.all.each do |curso|
+#   chat = Chat.new
+#   chat.curso = curso
+#   chat.save
+#   p chat
+# end
+
+require 'faker'
+curso = Curso.find(2)
+User.all.each do |user|
+  userch = UserChat.new
+  userch.user = user
+  userch.chat = curso.chat
+  userch.save
+  mess = Message.new
+  mess.user_chat = userch
+  mess.content = Faker::Educator.subject
+  mess.save
+  p mess
 end
