@@ -15,9 +15,13 @@
 
 <div class="container py-5">
   <div class="grids">
-    <% @cursos.each do |curso| %>
+    <% @cursos.shuffle.each do |curso| %>
       <div class="fac-card" data-aos="zoom-in">
+        <% if curso.photo.nil? %>
         <%= image_tag "Artes-humanas.jpg" %>
+        <% else %>
+        <%= image_tag curso.photo %>
+        <% end %>
         <%= link_to curso_path(curso), class: "curso" do %>
         <div class="text-area">
           <h2 class="college"><%= curso.ocde_geral %></h2>

@@ -15,7 +15,7 @@
 
 <div class="container py-5">
   <div class="grids">
-    <% @faculdades.each do |faculdade| %>
+    <% @faculdades.sort.each do |faculdade| %>
         <div class="fac-card" data-aos="zoom-in">
           <%= image_tag "facul.jpg" %>
           <%= link_to faculdade_path(faculdade), class: "faculdade" do %>
