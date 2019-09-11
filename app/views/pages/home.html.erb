@@ -74,13 +74,22 @@
     </div>
   </div>
   <% end %>
-  <div class="resume" data-aos="fade-right">
+  <div class="resume calendar-cursor" data-aos="fade-right" data-toggle="modal" data-target="#exampleModal">
     <div class="img-container">
       <%= image_tag 'timetable.png' %>
     </div>
     <div class="text">
       <h2>Consulte o calendário de provas</h2>
       <p>Não perca nenhuma data.</p>
+    </div>
+  </div>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="calendar-div">
+      <div id="calendar">
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Close", root_path, class: "btn btn-secondary" %>
+      </div>
     </div>
   </div>
 <hr>
