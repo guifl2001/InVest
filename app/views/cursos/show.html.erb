@@ -54,3 +54,19 @@
     </div>
   </div>
 </section>
+
+<%= link_to 'entrar no chat', user_chats_path(chat: @curso.chat), method: :post %>
+<div class="chat">
+  <h2 class="chat-title"><%= "#{@curso.name}" %></h2>
+  <% @curso.chat.messages.each do |message| %>
+    <% if message.user_chat.user == current_user %>
+      <div class="message flex-end">
+        <%= render 'messages/message',message: message %>
+      </div>
+    <% else %>
+      <div class="message">
+        <%= render 'messages/message',message: message %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
