@@ -162,3 +162,4 @@ Curso.all.each do |c|
   end
     p c.save
 end
+

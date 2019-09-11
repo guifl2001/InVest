@@ -58,15 +58,35 @@
 <%= link_to 'entrar no chat', user_chats_path(chat: @curso.chat), method: :post %>
 <div class="chat">
   <h2 class="chat-title"><%= "#{@curso.name}" %></h2>
-  <% @curso.chat.messages.each do |message| %>
-    <% if message.user_chat.user == current_user %>
-      <div class="message flex-end">
-        <%= render 'messages/message',message: message %>
-      </div>
+  <div id="messages">
+    <% if @curso.chat.messages.present? %>
+      <% @curso.chat.messages.each do |message| %>
+        <% if message.user_chat.user == current_user %>
+          <div class="message flex-end">
+            <%= render 'messages/message',message: message %>
+          </div>
+        <% else %>
+          <div class="message">
+            <%= render 'messages/message',message: message %>
+          </div>
+        <% end %>
+      <% end %>
     <% else %>
-      <div class="message">
-        <%= render 'messages/message',message: message %>
-      </div>
+      <p class="no-messages">Seja o primeiro a mandar uma mensagem nesse forum</p>
+    <% end %>
+  </div>
+  <% if current_user.user_chats.where(chat:  @curso.id ).present?%>
+    <div class="message-form">
+    <%= form_tag user_chat_messages_path(current_user.user_chats.where(chat:  @curso.id ).pluck(:id)), method: :post, remote: :true do %>
+
+      <%= text_field_tag :content, params[:content],
+      class: "form-control query",
+      placeholder: "Escreva sua mensagem"%>
+
+      <%= button_tag type: 'submit', class: "button-opc" do %>
+        <span class="my-0"> Enviar </span></i>
+      <% end %>
     <% end %>
   <% end %>
+</div>
 </div>
