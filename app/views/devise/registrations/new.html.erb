@@ -1,13 +1,19 @@
-<div class="container-login form-align-center flex-content-center">
+<div class="container-login-signup form-align-center flex-content-center">
   <div class="row">
     <div class="col-12">
-      <div class="form-center">
+      <div class="form-center-signup">
         <h2>Sign up</h2>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
 
           <div class="forms-inputs">
+            <%= f.input :first_name,
+                        required: true,
+                        input_html: { autocomplete: "Bruno" } %>
+            <%= f.input :last_name,
+                        required: true,
+                        input_html: { autocomplete: "Tostes" } %>
             <%= f.input :email,
                         required: true,
                         autofocus: true,
