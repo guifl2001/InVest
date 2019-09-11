@@ -282,6 +282,9 @@
   height: 19vh;
   margin: auto;
   margin-bottom: 2vh;
+  .fa-star {
+    color: #edb866;
+  }
 }
 
 .comments form textarea {
@@ -333,4 +336,13 @@
 
 .comment-submit [type="submit"]:not(:disabled):hover {
   opacity: 1;
+}
+
+summary {
+  color: #9A9A9A;
+}
+
+summary:hover {
+  color: black;
+  opacity: 0.65;
 }

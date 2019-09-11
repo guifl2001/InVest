@@ -108,12 +108,27 @@
         </div>
 
         <div class="container comments">
+          <div class="comment-submit">
+            <label>
+              <h2>Say it like you mean it:</h2>
+              <%= render 'reviews/form', faculdade: @faculdade, review: @review %>
+            </label>
+          </div>
           <div id="reviews">
-            <% @faculdade.reviews.each do |review| %>
-              <div class="comment">
-                <h3>Posted by <%= link_to review.user.email, user_path(review.user) %>, three days ago:</h3>
-                <p><%= render 'reviews/show', review: review %></p>
-              </div>
+            <% if  @faculdade.reviews.count > 4 %>
+              <% @faculdade.reviews.first(4).each do |review| %>
+                  <p><%= render 'reviews/show', review: review %></p>
+              <% end %>
+              <details>
+                <summary>Read all</summary>
+                <% @faculdade.reviews.last((@faculdade.reviews.count)-4).each do |review| %>
+                  <p><%= render 'reviews/show', review: review %></p>
+                <% end %>
+              </details>
+            <% else %>
+              <% @faculdade.reviews.each do |review| %>
+                  <p><%= render 'reviews/show', review: review %></p>
+              <% end %>
             <% end %>
           </div>
         </div>
