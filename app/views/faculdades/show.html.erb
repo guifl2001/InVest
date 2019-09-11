@@ -131,17 +131,18 @@
             </label>
           </div>
           <div id="reviews">
-              <% @faculdade.reviews.first(4).each do |review| %>
+              <% @faculdade.reviews.last(4).reverse.each do |review| %>
                   <p><%= render 'reviews/show', review: review %></p>
               <% end %>
             </div>
               <details>
               <!-- printa os 4 ultimos -->
-                <% @faculdade.reviews.last((@faculdade.reviews.count)-4).each do |review| %>
+                <% @faculdade.reviews.first((@faculdade.reviews.count)-4).each do |review| %>
                   <p><%= render 'reviews/show', review: review %></p>
                 <% end %>
                 <summary>Read all</summary>
               </details>
+
             <% end %>
 
 

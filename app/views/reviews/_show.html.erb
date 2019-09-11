@@ -1,7 +1,7 @@
 <div class="comment">
   <p>
     <% if review.user.first_name.present? %>
-      Posted by <%= link_to review.user.first_name, user_path(review.user) %>, three days ago:
+      Posted by <%= link_to review.user.first_name, user_path(review.user) %>, ago:
       <% (review.rating.to_i).times do %>
         <i class="fas fa-star"></i>
       <% end %>
@@ -20,3 +20,5 @@
   </p>
   <p><%= review.content %></p>
 </div>
+
+ <!-- @faculdade.reviews.first.created_at.day -->
