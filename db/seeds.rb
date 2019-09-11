@@ -126,16 +126,39 @@
 #   p chat
 # end
 
-require 'faker'
-curso = Curso.find(2)
-User.all.each do |user|
-  userch = UserChat.new
-  userch.user = user
-  userch.chat = curso.chat
-  userch.save
-  mess = Message.new
-  mess.user_chat = userch
-  mess.content = Faker::Educator.subject
-  mess.save
-  p mess
+# require 'faker'
+# curso = Curso.find(2)
+# User.all.each do |user|
+#   userch = UserChat.new
+#   userch.user = user
+#   userch.chat = curso.chat
+#   userch.save
+#   mess = Message.new
+#   mess.user_chat = userch
+#   mess.content = Faker::Educator.subject
+#   mess.save
+#   p mess
+# end
+
+Curso.all.each do |c|
+  o = c.ocde_geral
+  case o
+  when "Ciências sociais, negócios e direito"
+    c.photo = "Ciencias-sociais-negocios-direito.jpg"
+  when "Agricultura e veterinária"
+    c.photo = "agricultura-e-veterinaria.jpg"
+  when "Humanidades e artes"
+    c.photo = "Artes-humanas.jpg"
+  when "Ciências, matemática e computação"
+    c.photo = "Ciencias-matematica-computacao.jpg"
+  when "Engenharia, produção e construção"
+    c.photo = "Engenharia-producao-construcao.jpg"
+  when "Educação"
+    c.photo = "Educacao.jpg"
+  when "Saúde e bem estar social"
+    c.photo = "Saude-e-bem-estar-social.jpg"
+  when "Serviços"
+    c.photo = "Servicos.png"
+  end
+    p c.save
 end
