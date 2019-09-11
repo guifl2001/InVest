@@ -1,0 +1,5 @@
+var messageField = document.querySelector('#messages')
+var input = document.querySelector('#content')
+message = "<div class='message flex-end'><%= j render 'messages/message', message: @message %></div>"
+messageField.insertAdjacentHTML('beforeend', message)
+input.value = ''

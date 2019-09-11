@@ -14,7 +14,7 @@ class User < ApplicationRecord
   has_many :faculdades, through: :opcaos
   has_many :cursos, through: :opcaos
 
-  has_many :user_chats
+  has_many :user_chats, dependent: :destroy
   has_many :chats, through: :user_chats
   has_many :messages, through: :user_chats
 

@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2019_09_11_145026) do
     t.float "longitude"
     t.integer "ranking"
     t.float "nota"
-    t.string "photo"
   end
 
   create_table "follows", force: :cascade do |t|
