@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_202236) do
+ActiveRecord::Schema.define(version: 2019_09_11_145026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_09_10_202236) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ocde_geral"
+    t.string "photo"
   end
 
   create_table "faculdades", force: :cascade do |t|
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 2019_09_10_202236) do
     t.float "longitude"
     t.integer "ranking"
     t.float "nota"
+    t.string "photo"
   end
 
   create_table "follows", force: :cascade do |t|
