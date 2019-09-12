@@ -42,7 +42,23 @@ const initSlick = () => {
     ]
   });
 
-
+  $('.follows').slick({
+    centerMode: true,
+    slidesToShow: 3 ,
+    autoplay:false,
+    arrows: true,
+    dots: false,
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
 }
 
 export { initSlick }

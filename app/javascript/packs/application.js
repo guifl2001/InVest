@@ -16,7 +16,6 @@ import { initStarRating } from '../plugins/init_star_rating';
 import { hideModal } from '../components/modal';
 import clickFollow from '../components/following_opcao';
 
-
 AOS.init();
 initMapbox();
 initUpdateNavbarOnScroll();

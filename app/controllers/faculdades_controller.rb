@@ -15,7 +15,7 @@ class FaculdadesController < ApplicationController
   end
 
   def index
-    @faculdades = Faculdade.where.not("sigla = '-' OR sigla IS NULL").page(params[:page]).per(16)
+    @faculdades = Faculdade.where.not("sigla = '-' OR sigla IS NULL").order(:ranking).page(params[:page]).per(16)
 
     if params[:faculdade].present?
       if params[:faculdade].present? && params[:faculdade].length <= 5
