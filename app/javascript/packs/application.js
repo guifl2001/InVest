@@ -13,13 +13,16 @@ import { table } from '../components/table';
 import { initSlick } from '../components/init_slick';
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { initStarRating } from '../plugins/init_star_rating';
-// import { hideModal } from '../components/modal';
+import { hideModal } from '../components/modal';
+import clickFollow from '../components/following_opcao';
 
 AOS.init();
+initMapbox();
 initUpdateNavbarOnScroll();
 addLikes();
 table();
-initMapbox();
 initSlick();
 previewImageOnFileSelect();
 initStarRating();
+hideModal();
+clickFollow();

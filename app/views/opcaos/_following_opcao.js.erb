@@ -1,0 +1,43 @@
+// const buttonFollow = document.querySelector('.opcao_following');
+// const buttonUnfollow =  document.querySelector('.opcao_unfollowing');
+
+// const unfollowOpcao = () => {
+//   buttonFollow.addEventListener('click',()=> {
+//     console.log("unfollow")
+//     buttonFollow.innerHTML = '<%= link_to "Parar de seguir", user_opcao_path(current_user.user_opcaos.where(opcao: @opcao).pluck(:id)), method: :delete, remote: true,class: "btn btn-danger opcao_unfollowing", data: {id: "#{@opcao.id}"} %>'
+//   })
+// }
+
+// const followOpcao = () => {
+//   buttonUnfollow.addEventListener('click', () => {
+//     console.log("Follow")
+//     buttonUnfollow.innerHTML = '<%= link_to "Seguir",user_opcaos_path(@opcao), method: :post, remote: true,class: "btn btn-secondary opcao_following", data: {id: "#{@opcao.id}"} %>'
+//   })
+// }
+
+// if (buttonUnfollow) {
+//   followOpcao();
+// }
+
+// if (buttonFollow) {
+//   unfollowOpcao();
+// }
+// const clickFollow = () => {
+//   const buttonFollow = document.querySelector('.opcao_following');
+//   const buttonUnfollow = document.querySelector('.opcao_unfollowing');
+//   if (buttonFollow) {
+//     buttonFollow.addEventListener('click', () => {
+//       console.log("Follow")
+//       buttonFollow.innerText = 'Parar de seguir'
+//       buttonFollow.style.backgroundColor = '$orange-bg'
+//     })
+//   } else if (buttonUnfollow) {
+//     buttonUnfollow.addEventListener('click', () => {
+//       console.log("Unfollow")
+//       buttonUnfollow.innerText = 'Seguir'
+//       buttonUnfollow.style.backgroundColor = 'orange'
+//     })
+//   }
+// }
+
+// export default clickFollow;
