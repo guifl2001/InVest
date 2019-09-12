@@ -16,8 +16,12 @@
 <div class="container py-5">
   <div class="grids">
     <% @faculdades.sort.each do |faculdade| %>
-        <div class="fac-card ranking-facu" data-aos="zoom-in">
-          <%= image_tag "facul.jpg", height: 175, width: 265 %>
+        <div class="fac-card" data-aos="zoom-in">
+          <% if faculdade.photo.nil? %>
+            <%= image_tag "facul.jpg", height: 175, width: 265  %>
+          <% else %>
+            <img src="<%= faculdade.photo, height: 175, width: 265  %>" alt="">
+          <% end %>
           <%= link_to faculdade_path(faculdade), class: "faculdade" do %>
           <div class="text-area facu-text">
             <h2 class="college"><%= faculdade.sigla %></h2>

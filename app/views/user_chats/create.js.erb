@@ -1,3 +1,5 @@
-$('#chatModal').modal('show')
-var messages = document.querySelector('#messages')
-messages.insertAdjacentHTML('afterend', '<%= j render "messages/formajx" %>')
+var chatbtn = document.querySelector('#btn-place');
+chatbtn.innerHTML = '<button type="button" class="chat-open" data-toggle="modal" data-target="#chatModal"><i class="far fa-comments"></i></button>'
+$('#chatModal').modal('show');
+var messages = document.querySelector('#messages');
+messages.insertAdjacentHTML('afterend', '<%= j render "messages/formajx" %>');
