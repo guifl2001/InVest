@@ -31,7 +31,7 @@
         <% if opcao.faculdade.photo.nil? %>
         <%= image_tag "Educacao.jpg", height: 175, width: 265 %>
         <% else %>
-        <img src="<%= opcao.faculdade.photo, height: 175, width: 265 %>" alt="">
+        <img src="<%= opcao.faculdade.photo %>" style="height: 175, width: 265"alt="">
         <% end %>
         <%= link_to opcao_path(opcao), class: "faculdade" do %>
         <div class="text-area">

@@ -20,7 +20,7 @@
           <% if faculdade.photo.nil? %>
             <%= image_tag "facul.jpg", height: 175, width: 265  %>
           <% else %>
-            <img src="<%= faculdade.photo, height: 175, width: 265  %>" alt="">
+            <img src="<%= faculdade.photo %>" alt="">
           <% end %>
           <%= link_to faculdade_path(faculdade), class: "faculdade" do %>
           <div class="text-area facu-text">
