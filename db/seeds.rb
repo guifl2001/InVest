@@ -109,6 +109,7 @@ CSV.foreach(infos) do |row|
   end
 end
 
+
 puts "----------------------------------"
 puts "Creating Chats"
 puts "----------------------------------"
@@ -119,6 +120,7 @@ Curso.all.each do |curso|
   chat.save
   p chat
 end
+
 
 # puts "Creating Falsos Comentarios"
 #Seed para gerar falsos comentarios
@@ -135,10 +137,12 @@ end
 #   mess.save
 #   p mess
 # end
+
+
 puts "----------------------------------"
 puts "Creating Imagens dos Cursos"
 puts "----------------------------------"
-#Seed para adicionar as imagens dos cursos
+
 Curso.all.each do |c|
   o = c.ocde_geral
   case o
@@ -161,6 +165,8 @@ Curso.all.each do |c|
   end
     p c.save
 end
+
+
 puts "----------------------------------"
 puts "Database created and ready to work"
 puts "----------------------------------"
