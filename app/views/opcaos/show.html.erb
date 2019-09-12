@@ -2,10 +2,10 @@
 <div class="app" style="background-image: url('<%= image %>');">
   <main>
     <h1><%= @opcao.curso.name %> EM <%= @opcao.faculdade.name %></h1>
-    <% if current_user.user_opcaos.where(opcao_id: @opcao) %>
-      <h2><%= link_to "Unfollow",user_opcaos_path(@opcao), method: :delete, remote: true,class: "btn btn-danger" %></h2>
+        <% if current_user.user_opcaos.where(opcao: @opcao).present? %>
+      <h2><%= link_to "Unfollow",user_opcao_path(current_user.user_opcaos.where(opcao: @opcao).pluck(:id)), method: :delete, remote: true,class: "btn btn-danger opcao_following" %></h2>
     <% else %>
-      <h2><%= link_to "Follow",user_opcaos_path(opcao: @opcao), method: :post, remote: true,class: "btn btn-secondary" %></h2>
+      <h2><%= link_to "Follow",user_opcaos_path(opcao: @opcao), method: :post, remote: true,class: "btn btn-secondary opcao_unfollowing" %></h2>
     <% end %>
   </main>
 </div>
