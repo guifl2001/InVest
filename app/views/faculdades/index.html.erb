@@ -15,9 +15,13 @@
 
 <div class="container py-5">
   <div class="grids">
-    <% @faculdades.sort.each do |faculdade| %>
+    <% @faculdades.shuffle.each do |faculdade| %>
         <div class="fac-card" data-aos="zoom-in">
-          <%= image_tag "facul.jpg" %>
+          <% if faculdade.photo.nil? %>
+            <%= image_tag "facul.jpg" %>
+          <% else %>
+            <%= image_tag faculdade.photo %>
+          <% end %>
           <%= link_to faculdade_path(faculdade), class: "faculdade" do %>
           <div class="text-area">
             <h2 class="college"><%= faculdade.sigla %></h2>
