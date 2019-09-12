@@ -21,17 +21,17 @@
 
 <div class="container py-5">
   <div class="grids">
-    <% @opcaos.shuffle.each do |opcao| %>
+    <% @opcaos.order('random()').each do |opcao| %>
       <div class="fac-card" data-aos="zoom-in">
         <% if user_signed_in? %>
            <%= link_to user_opcaos_path(opcao: opcao), method: :post, remote: true, class: "card-add-link", alt: "seguir curso" do %>
             <i class="fas fa-heart"></i>
            <% end %>
         <% end %>
-        <% if opcao.photo.nil? %>
+        <% if opcao.faculdade.photo.nil? %>
         <%= image_tag "Educacao.jpg" %>
         <% else %>
-        <%= image_tag opcao.photo %>
+        <img src="<%= opcao.faculdade.photo %>" alt="">
         <% end %>
         <%= link_to opcao_path(opcao), class: "faculdade" do %>
         <div class="text-area">
