@@ -59,7 +59,6 @@
         <% end %>
         <h4 class="title text-center">Meus Cursos</h4>
         <div class="container">
-
         <% if @user.user_opcaos.size > 3 %>
           <div class="opcaos" id="opcaos">
             <% @user.user_opcaos.each_with_index do |user_opcao, index| %>
@@ -67,7 +66,6 @@
             <% end %>
           </div>
         <% elsif @user.user_opcaos.size > 0 %>
-
           <div class="opcs" id="opcs">
             <%= render 'card_grid', user: @user %>
           </div>
@@ -76,14 +74,13 @@
             <h4>Você ainda não escolheu nenhum curso.</h4>
           </div>
         <% end %>
-
         </div>
-        </div>
-        <h4 class="title text-center mt-3">Seguindo</h4>
+    </div>
+        <h4 class="title text-center mt-3" id="seguindo">Seguindo</h4>
         <div class="container">
 
         <% if @user.following.size > 3 %>
-          <div class="opcaos" id="opcaos">
+          <div class="follows" id="follows">
             <%= render 'user_card', user: @user %>
           </div>
         <% elsif @user.following.size > 0 %>

@@ -1,5 +1,5 @@
 
-<% image = image_path('curso.jpg') %>
+<% image = image_path('facul.jpg') %>
 <section class="hero image-as-background" style="background-image: url('<%= image %>');">
 
   <div class="hero-container">
@@ -63,16 +63,21 @@
     </div>
       <%= render 'messages/chat' %>
   </div>
-  <div>
+  <div id="btn-place">
   <% if current_user.user_chats.where(chat: @curso.chat).present? %>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#chatModal">
-      Abrir chat
+    <button type="button" class="chat-open" data-toggle="modal" data-target="#chatModal">
+      <i class="far fa-comments"></i>
     </button>
   <% else %>
-    <%= link_to 'Entrar no chat', user_chats_path(chat: @curso.chat), method: :post, remote: :true %>
+    <%= link_to user_chats_path(chat: @curso.chat), method: :post, remote: :true, class: "chat-open" do %>
+      <i class="far fa-comments"></i>
+    <% end %>
   <% end %>
   </div>
 <% else %>
+  <%= link_to user_session_path, class: "chat-open" do %>
+    <i class="far fa-comments"></i>
+  <% end %>
 <% end %>
 
 

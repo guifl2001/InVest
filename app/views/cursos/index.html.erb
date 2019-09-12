@@ -18,9 +18,9 @@
     <% @cursos.shuffle.each do |curso| %>
       <div class="fac-card" data-aos="zoom-in">
         <% if curso.photo.nil? %>
-        <%= image_tag "Artes-humanas.jpg" %>
+        <%= image_tag "Artes-humanas.jpg", height: 175, width: 265%>
         <% else %>
-        <%= image_tag curso.photo %>
+        <%= image_tag curso.photo, height: 175, width: 265 %>
         <% end %>
         <%= link_to curso_path(curso), class: "curso" do %>
         <div class="text-area">

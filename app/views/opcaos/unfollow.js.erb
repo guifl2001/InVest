@@ -1,0 +1,15 @@
+function renderUser() {
+  const user = document.querySelector("[data-opcao='<%= @opcao.id %>']");
+  if (user.className === "opcao_unfollowing") {
+    user.parentElement.insertAdjacentHTML("afterbegin", '<%= link_to "Unfollow",user_opcao_path(current_user.user_opcaos.where(opcao: @opcao).pluck(:id)), method: :delete, remote: true,class: "btn btn-danger opcao_following" %>');
+    user.remove();
+  }
+  if (user.className === "opcao_following") {
+    user.parentElement.insertAdjacentHTML("afterbegin",'<%= link_to "Follow",user_opcaos_path(opcao: @opcao), method: :post, remote: true,class: "btn btn-secondary opcao_unfollowing" %>');
+    user.remove();
+  }
+}
+
+if (window.location.pathname === "/opcaos/<%= @opcao.id %>") {
+  renderUser();
+}

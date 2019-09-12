@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_09_12_142011) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_09_12_142011) do
     t.float "longitude"
     t.integer "ranking"
     t.float "nota"
+    t.string "photo"
     t.string "phone"
     t.string "site"
     t.string "email"
@@ -94,6 +97,7 @@ ActiveRecord::Schema.define(version: 2019_09_12_142011) do
     t.integer "vagas"
     t.integer "enade"
     t.string "ocde_curso"
+    t.string "photo"
     t.index ["curso_id"], name: "index_opcaos_on_curso_id"
     t.index ["faculdade_id"], name: "index_opcaos_on_faculdade_id"
   end

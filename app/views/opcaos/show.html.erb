@@ -2,7 +2,7 @@
 <div class="app" style="background-image: url('<%= image %>');">
   <main>
     <h1><%= @opcao.curso.name %> EM <%= @opcao.faculdade.name %></h1>
-    <h2><%= link_to "Seguir", user_opcaos_path(opcao: @opcao), method: :post, remote: true %></h2>
+      <h2><%= link_to "Follow",user_opcaos_path(opcao: @opcao), method: :post, remote: true,class: "btn btn-secondary opcao_unfollowing" %></h2>
   </main>
 </div>
 <% notas = image_path('notas.jpg') %>
