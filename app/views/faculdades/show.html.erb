@@ -92,11 +92,11 @@
                     <div class="col-lg-4">
                         <div class="info-icon">
                             <i class="fa fa-fire"></i>
-                            <h3 style="margin-left: 3vh">Hot cursos</h3>
+                            <h3 style="margin-left: 3vh">Melhores cursos</h3>
                             <ul class="description-facu">
                                 <% @faculdade.cursos.first(8).each do |curso| %>
                                   <%= link_to(curso) do %>
-                                    <li><%= curso.name %></li>
+                                    <li><%= curso.name.capitalize %></li>
                                   <% end %>
                                 <% end %>
                             </ul>
