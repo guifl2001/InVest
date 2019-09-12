@@ -20,25 +20,22 @@
             <!-- Tab 2 -->
         <input type="radio" name="tabset" id="tab2" aria-controls="rauchbier">
         <label for="tab2">
-          <i class="fa fa-map"></i><h2>Map</h2>
+          <i class="fa fa-map"></i><h2>Mapa</h2>
         </label>
             <!-- Tab 3 -->
         <input type="radio" name="tabset" id="tab3" aria-controls="dunkles">
         <label for="tab3">
-          <i class="fa fa-plus-circle"></i><h2>More</h2>
+          <i class="fa fa-plus-circle"></i><h2>Mais</h2>
         </label>
         <div class="tab-panels">
           <section id="marzen" class="tab-panel">
             <h2>Infos</h2>
-            <p><strong>Historia: </strong> An elegant, malty German amber lager with a clean, rich, toasty and bready malt flavor.</p>
-            <p><strong>Geral: </strong> Campus principal
-            Endereço: R. Venâncio Borges do Nascimento, 377 - Jardim TV Morena - Campo Grande - MS</p>
-            <p>CEP: 79050-700</p>
-            <p><strong>Telefone do campus: </strong> (67) 3348-8800</p>
-            <p><strong>Telefone da instituição: </strong>0800-8806767/4003-6767</p>
-            <p><strong>Site: </strong> www.estacio.br</p>
-            <p><strong>E-mail: </strong> secretaria.fes@estacio.br</p>
-            <p><strong>Tipo de instituição: </strong> Privada</p>
+            <p><strong>História: </strong> <%= @faculdade.historia %></p>
+            <p><strong>Geral: </strong> <%= @faculdade.geral %></p>
+            <p><strong>Telefone da instituição: </strong> <%= @faculdade.phone %></p>
+            <p><strong>Site: </strong> <%= @faculdade.site %></p>
+            <p><strong>E-mail: </strong> <%= @faculdade.email %></p>
+            <p><strong>Tipo de instituição: </strong><%= @faculdade.tipo %></p>
           </section>
           <section id="rauchbier" class="tab-panel">
             <h2>Localização</h2>
@@ -54,17 +51,16 @@
           </section>
           <section id="dunkles" class="tab-panel">
             <h2>A mais</h2>
-            <p><strong>Mais infos: </strong></p>
-            <p><strong>Periodicidade: </strong>
-            Semestral</p>
+            <p><strong>Relação de vagas: </strong>
+             <%= @faculdade.relacao %></p>
             <p><strong>Enem: </strong>
-            Substitui o processo seletivo para todos os cursos e vagas</p>
+             <%= @faculdade.enem %></p>
             <p><strong>Cotas: </strong>
-            Não adota</p>
+             <%= @faculdade.cotas %></p>
             <p><strong>Prouni: </strong>
-            Credenciada</p>
+             <%= @faculdade.prouni %></p>
             <p><strong>FIES: </strong>
-            Credenciada</p>
+             <%= @faculdade.fies %></p>
           </section>
         </div>
       </div>
@@ -77,7 +73,7 @@
                 <div class="row">
                     <div class="title-area">
                         <h2><%= @faculdade.sigla %></h2>
-                        <p class="description">We promise you a new look and more importantly, a new attitude. We build that by getting to know you, your needs and creating the best looking clothes.</p>
+                        <p class="description"><%= @faculdade.intro %></p>
                     </div>
                 </div>
                 <div class="row-container">
@@ -85,8 +81,7 @@
                         <div class="info-icon">
                             <i class="fa fa-magic"></i>
                             <h3>Ideia</h3>
-                            <p class="description">Visão
-                              “Pensar a Educação como uma forma de desenvolvimento e valorização e tranformação do indivíduo e a sua inserção no mundo do trabalho e na sociedade."</p>
+                            <p class="description"><%= @faculdade.ideia %></p>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -111,7 +106,7 @@
         <div class="container comments"  id="comment-container">
           <div class="comment-submit">
             <label>
-              <h2>Say it like you mean it:</h2>
+              <h2>Deixe sua experiência:</h2>
               <%= render 'reviews/form', faculdade: @faculdade, review: @review %>
             </label>
           </div>
@@ -126,7 +121,7 @@
            <div class="container comments"  id="comment-container">
           <div class="comment-submit">
             <label>
-              <h2>Say it like you mean it:</h2>
+              <h2>Deixe sua experiência:</h2>
               <%= render 'reviews/form', faculdade: @faculdade, review: @review %>
             </label>
           </div>
@@ -140,7 +135,7 @@
                 <% @faculdade.reviews.first((@faculdade.reviews.count)-4).each do |review| %>
                   <p><%= render 'reviews/show', review: review %></p>
                 <% end %>
-                <summary>Read all</summary>
+                <summary>Ler Tudo</summary>
               </details>
 
             <% end %>
