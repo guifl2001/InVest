@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_11_145026) do
+ActiveRecord::Schema.define(version: 2019_09_12_142011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,23 @@ ActiveRecord::Schema.define(version: 2019_09_11_145026) do
     t.float "longitude"
     t.integer "ranking"
     t.float "nota"
+    t.string "phone"
+    t.string "site"
+    t.string "email"
+    t.string "tipo"
+    t.string "enem"
+    t.string "cotas"
+    t.string "prouni"
+    t.string "fies"
+    t.string "Nalunos"
+    t.string "Ncursos"
+    t.integer "ano"
+    t.string "cidades"
+    t.float "relacao"
+    t.string "ideia"
+    t.string "intro"
+    t.string "historia"
+    t.string "geral"
   end
 
   create_table "follows", force: :cascade do |t|

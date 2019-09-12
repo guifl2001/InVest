@@ -16,6 +16,8 @@ endereco = "db/updated_endereco.csv"
 ranking = "db/datas50.csv"
 infos = "db/todasfacul.csv"
 opcaos = "db/cursos_facul.csv"
+infosFacus = "db/infos_facus.csv"
+
 
 puts "----------------------------------"
 puts "Creating Cursos"
@@ -170,3 +172,33 @@ end
 puts "----------------------------------"
 puts "Database created and ready to work"
 puts "----------------------------------"
+
+
+
+puts "----------------------------------"
+puts "Creating Infos Facus"
+puts "----------------------------------"
+# Seed para cadastrar os endereços
+CSV.foreach(infosFacus) do |row|
+  f = Faculdade.find_by("sigla ILIKE ?", row[0])
+  if f
+    p f.phone = row[1]
+    p f.site = row[2]
+    p f.email = row[3]
+    p f.tipo = row[4]
+    p f.enem = row[5]
+    p f.cotas = row[6]
+    p f.prouni = row[7]
+    p f.fies = row[8]
+    p f.Nalunos = row[9]
+    p f.Ncursos = row[10]
+    p f.ano = row[11]
+    p f.cidades = row[12]
+    p f.relacao = row[13]
+    p f.ideia = row[14]
+    p f.intro = row[15]
+    p f.historia = row[16]
+    p f.geral = row[17]
+    f.save
+  end
+end

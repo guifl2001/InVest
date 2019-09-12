@@ -1,7 +1,7 @@
 <div class="comment">
   <p>
     <% if review.user.first_name.present? %>
-      Posted by <%= link_to review.user.first_name, user_path(review.user) %>, ago:
+      Posted by <%= link_to review.user.first_name, user_path(review.user) %>  :
       <% (review.rating.to_i).times do %>
         <i class="fas fa-star"></i>
       <% end %>
@@ -9,7 +9,7 @@
         <i class="far fa-star"></i>
       <% end %>
     <% else %>
-      Posted by <%= link_to review.user.email, user_path(review.user) %>, three days ago:
+      Posted by <%= link_to review.user.email, user_path(review.user) %>,  :
       <% (review.rating.to_i).times do %>
         <i class="fas fa-star"></i>
       <% end %>
