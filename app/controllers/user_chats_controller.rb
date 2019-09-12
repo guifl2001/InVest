@@ -5,6 +5,5 @@ class UserChatsController < ApplicationController
     @user_chat.chat = @chat
     @user_chat.user = current_user
     @user_chat.save
-    redirect_to root_path
   end
 end

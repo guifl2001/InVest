@@ -1,0 +1,12 @@
+<div class="message-form">
+<%= form_tag user_chat_messages_path(current_user.user_chats.where(chat:  @curso.chat ).pluck(:id)), method: :post, remote: :true do %>
+
+  <%= text_field_tag :content, params[:content],
+  class: "form-control query",
+  placeholder: "Escreva sua mensagem"%>
+
+  <%= button_tag type: 'submit', class: "button-opc" do %>
+    <span class="my-0"> Enviar </span>
+  <% end %>
+<% end %>
+</div>
