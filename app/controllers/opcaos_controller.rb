@@ -7,7 +7,7 @@ class OpcaosController < ApplicationController
   end
 
   def index
-    @opcaos = Opcao.all.page(params[:page]).per(16)
+    @opcaos = Opcao.all.order(:photo).page(params[:page]).per(16)
 
     if params[:facu].present? && params[:opçao].present?
       @opcaos = Opcao.joins(:faculdade).where("sigla ILIKE ? AND ocde_curso ILIKE ?", "%#{params[:facu]}%",
