@@ -1,6 +1,6 @@
 .fac-card {
   border-radius: 2px;
-  height: 38vh;
+  height: 35vh;
   overflow: hidden;
   margin-top: 8px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.15);
@@ -19,9 +19,9 @@
     transition: 0.2s ease;
     width: 100%;
     object-fit: cover;
-    height: 50vh;
-    min-height: 150px;
-    max-height: 200px;
+    height: 22vh;
+    min-height: 90px;
+    max-height: 140px;
   }
   a {
     &:hover {
@@ -37,8 +37,9 @@
       font-size: 12px;
     }
     h6 {
+      text-transform: uppercase;
       font-weight: 300;
-      font-size: 15px;
+      font-size: 11px;
       color: $primary-color;
     }
   }
