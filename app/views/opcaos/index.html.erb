@@ -21,7 +21,7 @@
 
 <div class="container py-5">
   <div class="grids">
-    <% @opcaos.order('random()').each do |opcao| %>
+    <% @opcaos.each do |opcao| %>
       <div class="fac-card" data-aos="zoom-in">
         <% if user_signed_in? %>
            <%= link_to user_opcaos_path(opcao: opcao), method: :post, remote: true, class: "card-add-link", alt: "seguir curso" do %>
